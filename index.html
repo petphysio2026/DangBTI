@@ -223,6 +223,55 @@ input:focus{border-color:var(--accent-2);}
 .feature-card .trait{font-size:13px; font-weight:700; color:var(--accent-ink); margin-bottom:3px;}
 .feature-card .note{font-size:13.5px; color:var(--ink);}
 
+/* owner MBTI + chemistry + paywall */
+select.owner-mbti{width:100%; padding:13px 14px; border-radius:13px; border:1.5px solid var(--line); background:var(--surface-2); color:var(--ink); font-size:15px; margin-bottom:8px; font-family:inherit;}
+.field-hint{font-size:12px; color:var(--ink-faint); margin:0 0 16px;}
+.combo-area{display:flex; flex-direction:column; gap:18px;}
+.pair-row{display:flex; align-items:center; justify-content:center; gap:12px; margin:6px 0 16px;}
+.pair-badge{flex:1; max-width:170px; text-align:center; padding:14px 8px; border-radius:16px; background:var(--surface-2); border:1px solid var(--line);}
+.pair-badge .who{font-size:11.5px; font-weight:700; color:var(--ink-faint);}
+.pair-badge .code{font-family:'Gaegu'; font-size:32px; font-weight:700; color:var(--accent-2-ink); letter-spacing:.03em;}
+.pair-x{font-size:22px; font-weight:900; color:var(--accent-2);}
+.chemi-line{font-size:16px; font-weight:700; line-height:1.55; padding:16px; border-radius:16px; background:linear-gradient(160deg,var(--accent-soft),var(--surface-2)); border:1px solid var(--line); margin-bottom:14px;}
+.notice-box .btn-ghost{margin-top:10px; padding:10px;}
+.paywall{border:2px solid var(--accent);}
+.price-row{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; margin:4px 0 16px;}
+.price{font-size:28px; font-weight:900; color:var(--ink); font-variant-numeric:tabular-nums;}
+.price-note{font-size:12.5px; color:var(--ink-faint);}
+.toc{list-style:none; padding:0; margin:0 0 16px; display:flex; flex-direction:column; gap:8px;}
+.toc li{display:flex; gap:10px; align-items:flex-start; font-size:14px; font-weight:600; line-height:1.5; padding:11px 13px; border-radius:13px; background:var(--surface-2); border:1px solid var(--line);}
+.toc li .lock{flex:none; opacity:.55;}
+.toc li .soon{font-size:11px; font-weight:700; color:var(--accent-2); margin-left:4px; white-space:nowrap;}
+.teaser{position:relative; font-size:13.5px; line-height:1.75; color:var(--ink-soft); padding:14px 15px; border-radius:14px; border:1px dashed var(--line); margin-bottom:16px; overflow:hidden;}
+.teaser .t-head{font-weight:700; color:var(--ink); margin-bottom:4px;}
+.teaser .blur{filter:blur(5px); user-select:none; pointer-events:none;}
+.teaser .fade{position:absolute; left:0; right:0; bottom:0; height:62%; background:linear-gradient(rgba(0,0,0,0),var(--surface) 70%); display:flex; align-items:flex-end; justify-content:center; padding-bottom:12px; font-size:12.5px; font-weight:700; color:var(--accent-2-ink);}
+.code-label{font-size:12.5px; color:var(--ink-soft); margin-bottom:6px; line-height:1.55;}
+.code-box{display:flex; gap:8px; align-items:center; padding:10px 12px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line); margin-bottom:16px;}
+.code-box code{flex:1; font-size:12.5px; word-break:break-all; color:var(--ink); font-family:inherit; font-weight:600;}
+.code-box button{flex:none; border:1px solid var(--line); background:var(--surface); color:var(--ink-soft); border-radius:9px; padding:6px 10px; font-size:12px; font-weight:700; cursor:pointer;}
+.btn-story{width:100%; padding:14px; border:none; border-radius:14px; cursor:pointer; font-weight:700; font-size:15px; color:#fff; background:linear-gradient(90deg,#F58529,#DD2A7B,#8134AF); margin-top:10px;}
+.btn-story:disabled{opacity:.6; cursor:wait;}
+.coupon-box{margin-top:12px; padding:14px 15px; border-radius:14px; border:1.5px dashed var(--accent-2); background:var(--accent-2-soft); color:var(--accent-2-ink); font-size:13.5px; line-height:1.65;}
+.coupon-box strong{font-size:19px; letter-spacing:.06em;}
+.coupon-box .btn-primary{margin-top:10px;}
+
+/* all-in-one */
+.step-list{margin:0 0 20px; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.step-list li{font-size:12.5px; font-weight:600; color:var(--ink-soft); padding:10px 12px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line); line-height:1.45;}
+.step-list li b{display:block; color:var(--accent-2-ink); font-size:11.5px;}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5px solid var(--line); background:var(--surface-2); color:var(--ink); font-size:15px; margin-bottom:16px; font-family:inherit;}
+.result-block{padding-top:22px; margin-top:22px; border-top:1px dashed var(--line);}
+.result-block:first-of-type{padding-top:0; margin-top:0; border-top:none;}
+.result-block > h3{font-size:18px; margin-bottom:14px;}
+.aio-head{font-size:15px; font-weight:700; color:var(--ink-soft); text-align:center; margin-bottom:18px;}
+.aio-head b{color:var(--accent-2-ink);}
+.insight{border:1px solid var(--line); border-radius:15px; padding:14px 15px; background:var(--surface-2); margin-bottom:10px;}
+.insight .i-title{font-size:14px; font-weight:700; margin-bottom:5px; color:var(--ink);}
+.insight p{font-size:13.5px; color:var(--ink-soft);}
+.next-hint{font-size:13px; font-weight:700; color:var(--accent-2-ink); text-align:center; margin-top:18px;}
+
 .disclaimer{font-size:11.5px; color:var(--ink-faint); text-align:center; line-height:1.7; padding:4px 10px;}
 
 [hidden]{display:none !important;}
@@ -259,6 +308,11 @@ input:focus{border-color:var(--accent-2);}
       <p class="section-sub">평소 우리 강아지의 행동을 떠올리며 28개의 질문에 답해주세요. 사회성·호기심·교감·생활 패턴 4가지 영역을 7문항씩 살펴봐요. 약 4분 걸리고, 정답은 없으니 가장 가까운 쪽을 골라주시면 돼요.</p>
       <label class="field" for="dogNameInput">강아지 이름 (선택)</label>
       <input type="text" id="dogNameInput" placeholder="예: 초코, 뭉치...">
+      <label class="field" for="dogBreedInput">견종 (선택)</label>
+      <input type="text" id="dogBreedInput" placeholder="예: 말티즈, 믹스견...">
+      <label class="field" for="ownerMbtiA">보호자(나)의 MBTI (선택)</label>
+      <select id="ownerMbtiA" class="owner-mbti"></select>
+      <p class="field-hint">고르면 결과에서 보호자 × 우리 아이 케미를 함께 풀어드려요.</p>
       <button class="btn-primary" id="startQuizBtn">테스트 시작하기</button>
     </div>
 
@@ -320,6 +374,10 @@ input:focus{border-color:var(--accent-2);}
       <label class="field" for="sajuOwnerYearInput">보호자 태어난 해 (선택, 궁합 풀이용)</label>
       <input type="number" id="sajuOwnerYearInput" placeholder="예: 1992" min="1920" max="2026">
 
+      <label class="field" for="ownerMbtiB">보호자(나)의 MBTI (선택)</label>
+      <select id="ownerMbtiB" class="owner-mbti"></select>
+      <p class="field-hint">태어난 해와 MBTI를 넣으면 보호자와의 오행·성격 케미까지 볼 수 있어요.</p>
+
       <button class="btn-primary" id="sajuSubmitBtn">사주 보기</button>
     </div>
 
@@ -345,10 +403,155 @@ input:focus{border-color:var(--accent-2);}
 
   </section>
 
+  <!-- ===================== OWNER x DOG CHEMISTRY + PAYWALL ===================== -->
+  <div class="combo-area" id="comboArea" hidden>
+
+    <div class="card" id="chemiCard">
+      <span class="eyebrow">OWNER × DOG CHEMISTRY · FREE</span>
+      <h2 class="section-title" id="chemiTitle">보호자 × 우리 아이 케미</h2>
+
+      <div id="chemiNeedDog" class="notice-box" hidden>
+        멍BTI 테스트를 마치면 보호자와 우리 아이의 성격 케미가 열려요.
+        <button class="btn-ghost" id="goMbtiBtn">멍BTI 테스트 하러 가기</button>
+      </div>
+
+      <div id="chemiOwnerMissing" class="notice-box" hidden>
+        <label class="field" for="ownerMbtiC">보호자(나)의 MBTI를 고르면 케미 한줄평이 열려요</label>
+        <select id="ownerMbtiC" class="owner-mbti" style="margin-bottom:0"></select>
+      </div>
+
+      <div id="chemiBody" hidden>
+        <div class="pair-row">
+          <div class="pair-badge"><div class="who">보호자</div><div class="code" id="pairOwner"></div></div>
+          <div class="pair-x">×</div>
+          <div class="pair-badge"><div class="who" id="pairDogName">우리 아이</div><div class="code" id="pairDog"></div></div>
+        </div>
+        <p class="chemi-line" id="chemiLine"></p>
+        <div class="chip-row" id="chemiChips" style="margin-bottom:14px"></div>
+      </div>
+
+      <div class="notice-box" id="chemiOheng" style="margin-bottom:0"></div>
+    </div>
+
+    <div class="card paywall" id="paywallCard" hidden>
+      <span class="eyebrow gold">PREMIUM REPORT</span>
+      <h2 class="section-title" id="paywallTitle">우리 둘을 위한 관계 보완 가이드</h2>
+      <div class="price-row">
+        <span class="price" id="priceText">3,900원</span>
+        <span class="price-note" id="priceNote">10페이지 PDF 리포트</span>
+      </div>
+
+      <ul class="toc" id="paywallToc"></ul>
+
+      <div class="teaser">
+        <div class="t-head">🌟 케미스트리 총평 미리보기</div>
+        <div id="teaserVisible"></div>
+        <div class="blur" aria-hidden="true">두 분이 함께하는 하루를 떠올려 보면, 아침 산책길의 작은 습관부터 저녁 소파 위의 거리감까지 서로를 닮아가고 있는 순간이 꽤 많아요. 특히 보호자의 말투와 몸짓 하나하나를 아이는 생각보다 훨씬 세심하게 읽고 있는데, 그 신호를 어떻게 주고받느냐에 따라 오해가 생기기도, 깊은 신뢰가 쌓이기도 해요.</div>
+        <div class="fade">결제하면 전체 리포트를 받아볼 수 있어요</div>
+      </div>
+
+      <div class="code-label" id="codeLabel">결제할 때 아래 <b>결과 코드</b>를 요청사항(메모)에 붙여넣어 주세요. 이 코드로 우리 아이 맞춤 리포트를 만들어요.</div>
+      <div class="code-box"><code id="resultCode"></code><button id="copyCodeBtn" type="button">복사</button></div>
+
+      <button class="btn-primary" id="payBtn">3,900원 결제하고 리포트 받기</button>
+      <p class="field-hint" id="deliveryNote" style="margin:8px 0 0; text-align:center;"></p>
+      <div class="notice-box warn" id="payNotice" hidden style="margin:12px 0 0;"></div>
+
+      <button class="btn-story" id="storyBtn">📸 인스타 스토리에 공유하고 50% 할인 받기</button>
+      <div class="coupon-box" id="couponBox" hidden></div>
+    </div>
+
+  </div>
+
   <!-- ===================== PREMIUM PHOTO SECTION ===================== -->
   <section id="premiumSection" hidden>
 
-    <div class="card" id="premiumForm">
+    <div class="card" id="aioIntro">
+      <span class="eyebrow gold">ALL-IN-ONE · 보호자 연계 정밀 분석</span>
+      <h2 class="section-title">우리 아이 × 보호자 올인원 분석</h2>
+      <p class="section-sub">반려견과 보호자 정보, 성격·관계·생활 질문에 한 번만 답하면 멍BTI, 개사주, 보호자 케미, 생활 처방까지 한 화면에 모아 보여드려요. 약 7분 걸려요.</p>
+      <ol class="step-list">
+        <li><b>STEP 1</b>반려견 정보·생일</li>
+        <li><b>STEP 2</b>보호자 MBTI·태어난 해</li>
+        <li><b>STEP 3</b>반려견 성격 28문항</li>
+        <li><b>STEP 4</b>보호자와의 관계</li>
+        <li><b>STEP 5</b>일상·산책·놀이 습관</li>
+        <li><b>STEP 6</b>보호자 스타일·고민</li>
+      </ol>
+      <button class="btn-primary" id="aioStartBtn">올인원 분석 시작하기</button>
+    </div>
+
+    <div class="card" id="aioForm" hidden>
+      <div class="q-meta">
+        <div class="progress-label" id="aioFormLabel">단계 1</div>
+        <span class="q-cat" id="aioFormCat">반려견 정보</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="aioFormFill" style="width:2%"></div></div>
+
+      <div id="aioDogStep">
+        <h2 class="section-title">우리 아이를 소개해주세요</h2>
+        <p class="section-sub">생일을 모르면 입양일을 넣어도 괜찮아요.</p>
+        <label class="field" for="aioName">이름</label>
+        <input type="text" id="aioName" placeholder="예: 초코, 뭉치...">
+        <label class="field" for="aioBreed">견종</label>
+        <input type="text" id="aioBreed" placeholder="예: 말티즈, 믹스견...">
+        <label class="field" for="aioDate">생년월일 (또는 입양일) *</label>
+        <input type="date" id="aioDate">
+        <div class="form-row">
+          <div>
+            <label class="field" for="aioSex">성별</label>
+            <select id="aioSex" class="aio-select">
+              <option value="">선택 안 함</option><option value="남아">남아</option><option value="여아">여아</option>
+            </select>
+          </div>
+          <div>
+            <label class="field" for="aioTogether">함께한 기간</label>
+            <select id="aioTogether" class="aio-select">
+              <option value="">선택 안 함</option><option value="1년 미만">1년 미만</option><option value="1~3년">1~3년</option><option value="3~7년">3~7년</option><option value="7년 이상">7년 이상</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="aioOwnerStep" hidden>
+        <h2 class="section-title">보호자님에 대해 알려주세요</h2>
+        <p class="section-sub">보호자의 성향과 기운을 함께 봐야 두 분의 케미를 풀 수 있어요.</p>
+        <label class="field" for="aioOwnerMbti">보호자(나)의 MBTI</label>
+        <select id="aioOwnerMbti" class="aio-select"></select>
+        <label class="field" for="aioOwnerYear">보호자 태어난 해 (선택, 오행 궁합용)</label>
+        <input type="number" id="aioOwnerYear" placeholder="예: 1992" min="1920" max="2026">
+      </div>
+
+      <div id="aioFormErr" class="notice-box warn" hidden></div>
+      <div class="btn-row">
+        <button class="btn-ghost" id="aioFormBack" type="button">이전</button>
+        <button class="btn-primary" id="aioFormNext" type="button">다음</button>
+      </div>
+    </div>
+
+    <div class="card" id="aioQuiz" hidden>
+      <div class="q-meta">
+        <div class="progress-label" id="aioQLabel"></div>
+        <span class="q-cat" id="aioQCat"></span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="aioQFill"></div></div>
+      <div class="q-text" id="aioQText"></div>
+      <div id="aioOpts"></div>
+      <button class="btn-back" id="aioPrevBtn" type="button">← 이전</button>
+    </div>
+
+    <div class="card" id="aioResult" hidden>
+      <span class="eyebrow gold">ALL-IN-ONE REPORT</span>
+      <h2 class="section-title" id="aioResTitle">올인원 분석 결과</h2>
+      <div class="aio-head" id="aioResHead"></div>
+      <div id="aioResBody"></div>
+      <p class="next-hint">👇 아래에서 보호자 케미와 맞춤 프리미엄 리포트를 확인하세요</p>
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn-ghost" id="aioRedoBtn" type="button">처음부터 다시 분석하기</button>
+      </div>
+    </div>
+
+    <div class="card" id="premiumForm" hidden>
       <span class="eyebrow gold">PHOTO-BASED AI REPORT · BETA</span>
       <h2 class="section-title">사진으로 보는 AI 개관상 (테스트 중)</h2>
       <p class="section-sub">정면·좌측·우측·위·아래, 5방향 사진을 올리면 AI가 우리 아이만의 특징을 직접 짚어가며 더 깊은 프리미엄 리포트를 만들어드려요. 최소 1장부터 가능하고, 많이 올릴수록 더 정교해져요.</p>
@@ -427,6 +630,20 @@ input:focus{border-color:var(--accent-2);}
 <script>
 (function(){
 
+  /* =====================================================
+     운영 설정값 — 결제 링크가 준비되면 여기만 채우면 돼요
+  ===================================================== */
+  var CONFIG = {
+    PRICE: 3900,                       // 프리미엄 리포트 가격(원)
+    PAYMENT_URL: '',                   // 정가 결제 링크 (PG 결제링크·스마트스토어 상품 주소 등)
+    DISCOUNT_PAYMENT_URL: '',          // 50% 할인가 결제 링크
+    COUPON_CODE: 'STORY50',            // 스토리 공유 할인 코드
+    SITE_URL: 'https://petphysio2026.github.io/DangBTI/',
+    FACE_ART_READY: false,             // AI 관상 이미지 4컷 제작이 준비되면 true
+    DELIVERY_NOTE: '결제 확인 후 입력하신 이메일로 PDF 리포트를 보내드려요.',
+    PAY_NOT_READY: '결제 오픈을 준비하고 있어요. 조금만 기다려 주세요!'
+  };
+
   /* ---------- tabs ---------- */
   var tabMbtiBtn = document.getElementById('tabMbtiBtn');
   var tabSajuBtn = document.getElementById('tabSajuBtn');
@@ -435,7 +652,10 @@ input:focus{border-color:var(--accent-2);}
   var sajuSection = document.getElementById('sajuSection');
   var premiumSection = document.getElementById('premiumSection');
 
+  var currentTab = 'mbti';
   function showTab(which){
+    currentTab = which;
+    renderCombo();
     mbtiSection.hidden = which !== 'mbti';
     sajuSection.hidden = which !== 'saju';
     premiumSection.hidden = which !== 'premium';
@@ -448,7 +668,8 @@ input:focus{border-color:var(--accent-2);}
   tabPremiumBtn.addEventListener('click', function(){ showTab('premium'); });
 
   /* shared state used to cross-reference the premium report */
-  var sharedState = { dogName:null, breed:null, mbtiCode:null, mbtiTitle:null, sajuAnimal:null };
+  var sharedState = { dogName:null, breed:null, mbtiCode:null, mbtiTitle:null, sajuAnimal:null,
+    ownerMbti:null, ownerYear:null, sajuDominant:null, sajuPct:null, sajuDate:null };
 
   /* =====================================================
      MBTI QUIZ
@@ -541,6 +762,10 @@ input:focus{border-color:var(--accent-2);}
   startQuizBtn.addEventListener('click', function(){
     dogName = (dogNameInput.value || '').trim() || '우리 강아지';
     sharedState.dogName = dogName;
+    var breedVal = (document.getElementById('dogBreedInput').value || '').trim();
+    if (breedVal) sharedState.breed = breedVal;
+    sharedState.mbtiCode = null;
+    renderCombo();
     qIndex = 0;
     counts = {E:0,I:0,S:0,N:0,F:0,T:0,J:0,P:0};
     history = [];
@@ -626,9 +851,13 @@ input:focus{border-color:var(--accent-2);}
 
     mbtiQuiz.hidden = true;
     mbtiResult.hidden = false;
+    renderCombo();
 
     document.getElementById('copyResultBtn').onclick = function(){
       var summary = dogName + '의 멍BTI는 ' + code + ' (' + info.title + ')\n' + info.desc + '\n훈련 팁: ' + info.tip;
+      var chemi = buildChemi();
+      if (chemi) summary += '\n\n' + chemi.owner + ' 보호자 × ' + code + ' ' + dogName + ': ' + chemi.line;
+      summary += '\n\n나도 해보기 👉 ' + CONFIG.SITE_URL;
       var btn = this;
       var done = function(){ var old = btn.textContent; btn.textContent = '복사 완료!'; setTimeout(function(){ btn.textContent = old; }, 1500); };
       try{
@@ -819,10 +1048,14 @@ input:focus{border-color:var(--accent-2);}
     if (!dateStr){ sajuDateInput.focus(); return; }
 
     sharedState.dogName = name;
-    sharedState.breed = breed || null;
+    if (breed) sharedState.breed = breed;
 
     var r = computeSaju(name, dateStr, breed, ownerYear);
     sharedState.sajuAnimal = BRANCH_ANIMAL[r.branchIdx];
+    sharedState.sajuDominant = r.dominantIdx;
+    sharedState.sajuPct = r.pct[r.dominantIdx];
+    sharedState.sajuDate = dateStr;
+    sharedState.ownerYear = (ownerYear && ownerYear > 1900 && ownerYear < 2100) ? ownerYear : null;
 
     document.getElementById('sajuAnimalEmoji').textContent = BRANCH_EMOJI[r.branchIdx];
     document.getElementById('sajuHeadline').textContent = name + '의 사주';
@@ -866,11 +1099,740 @@ input:focus{border-color:var(--accent-2);}
 
     sajuForm.hidden = true;
     sajuResultEl.hidden = false;
+    renderCombo();
   });
 
   document.getElementById('sajuRedoBtn').addEventListener('click', function(){
     sajuResultEl.hidden = true;
     sajuForm.hidden = false;
+  });
+
+  /* =====================================================
+     OWNER MBTI x DOG CHEMISTRY (free) + PAYWALL + VIRAL
+  ===================================================== */
+  var MBTI_LIST = ['ISTJ','ISFJ','INFJ','INTJ','ISTP','ISFP','INFP','INTP','ESTP','ESFP','ENFP','ENTP','ESTJ','ESFJ','ENFJ','ENTJ'];
+  var AXIS_KEYS = ['EI','SN','FT','JP'];
+  var AXIS_NAME = ['에너지 방향','호기심 스타일','교감 방식','생활 리듬'];
+  /* key = 보호자 글자 + 반려견 글자 */
+  var AXIS_CHEMI = {
+    EI:{EE:'둘 다 밖에서 에너지를 얻는 타입이라 주말 나들이 메이트로는 최고의 조합이에요.',
+        EI:'활발한 보호자가 낯가리는 아이에게 세상을 천천히 소개해주는 통역사가 되어줄 수 있어요. 아이가 쉴 틈은 꼭 남겨주세요.',
+        IE:'조용한 보호자를 아이가 밖으로 이끌어주는 사이예요. 매일의 산책이 두 분 모두의 활력소가 돼요.',
+        II:'둘 다 집이 최고인 집콕 콤비예요. 조용한 루틴 속에서 깊은 유대가 차곡차곡 쌓여요.'},
+    SN:{SS:'익숙한 루틴을 함께 지키는 걸 좋아해서 생활이 안정적이에요. 가끔은 새 산책길로 작은 변화를 줘보세요.',
+        SN:'현실적인 보호자가 엉뚱한 아이의 호기심을 안전하게 지켜주는 든든한 울타리가 돼요.',
+        NS:'상상력 풍부한 보호자가 루틴파 아이에게 새 놀이를 소개해줄 수 있어요. 변화는 한 번에 하나씩이 포인트!',
+        NN:'둘 다 새로운 걸 좋아하는 탐험가 콤비예요. 노즈워크나 새 장난감 같은 두뇌 놀이에서 케미가 폭발해요.'},
+    FT:{FF:'감정이 잘 통하는 다정한 콤비예요. 서로의 기분을 금방 알아채는 만큼 보호자의 기분이 아이에게 옮기 쉬워요.',
+        FT:'스킨십을 좋아하는 보호자와 쿨한 아이 사이엔 온도 차가 있을 수 있어요. 아이가 먼저 다가올 때 크게 반겨주는 게 핵심이에요.',
+        TF:'차분한 보호자에게 아이가 다정함을 채워주는 사이예요. 칭찬할 땐 목소리 톤을 한껏 올려주세요.',
+        TT:'서로 쿨하게 존중하는 독립형 콤비예요. 과한 애정 표현보다 함께하는 시간 자체가 사랑의 언어예요.'},
+    JP:{JJ:'시간 약속을 잘 지키는 계획형 콤비라 밥·산책 루틴이 착착 맞아요.',
+        JP:'계획적인 보호자와 즉흥적인 아이는 일정에서 부딪힐 수 있어요. 정해진 시간 안에서 자유 시간을 주는 게 해법이에요.',
+        PJ:'루틴을 좋아하는 아이가 즉흥적인 보호자의 생활에 리듬을 만들어줘요. 밥과 산책 시간만큼은 지켜주세요.',
+        PP:'그날그날 기분 따라 움직이는 자유로운 콤비예요. 아이의 안정감을 위해 최소한의 루틴 하나는 만들어두세요.'}
+  };
+  var EL_GEN = [1,2,3,4,0];   /* 목생화 화생토 토생금 금생수 수생목 */
+
+  var comboArea = document.getElementById('comboArea');
+  var ownerSelects = ['ownerMbtiA','ownerMbtiB','ownerMbtiC'].map(function(id){ return document.getElementById(id); });
+  ownerSelects.forEach(function(sel){
+    sel.innerHTML = '<option value="">선택 안 함</option>' + MBTI_LIST.map(function(m){ return '<option value="' + m + '">' + m + '</option>'; }).join('');
+    sel.addEventListener('change', function(){ setOwnerMbti(sel.value); });
+  });
+  function setOwnerMbti(v){
+    sharedState.ownerMbti = v || null;
+    ownerSelects.forEach(function(s){ s.value = v || ''; });
+    renderCombo();
+  }
+
+  function buildChemi(){
+    var o = sharedState.ownerMbti, d = sharedState.mbtiCode;
+    if (!o || !d) return null;
+    var same = [], diff = [], axes = [];
+    for (var i = 0; i < 4; i++){
+      var key = o[i] + d[i];
+      var isSame = o[i] === d[i];
+      (isSame ? same : diff).push(i);
+      axes.push({name:AXIS_NAME[i], same:isSame, text:AXIS_CHEMI[AXIS_KEYS[i]][key]});
+    }
+    var line;
+    if (same.length === 4) line = '거울처럼 닮은 소울메이트! 말하지 않아도 통하는 사이예요.';
+    else if (same.length === 3) line = '닮은 점이 많아 편안한 사이에, ' + AXIS_NAME[diff[0]] + '에서는 서로를 채워주는 찰떡 콤비예요.';
+    else if (same.length === 2) line = '닮은 듯 다른 매력으로 서로의 빈틈을 채워주는 밸런스형 파트너예요.';
+    else if (same.length === 1) line = '다른 점이 많아 서로 배울 게 많은 성장형 콤비! ' + AXIS_NAME[same[0]] + '만큼은 꼭 닮았어요.';
+    else line = '정반대라 더 끌리는 상호보완 콤비! 서로의 부족한 부분을 채워주는 사이예요.';
+    var focus = diff.length ? diff[0] : 0;
+    return {owner:o, dog:d, line:line, axes:axes, teaser:axes[focus].text};
+  }
+
+  function elemShort(i){ return ELEMENTS[i].charAt(0); }
+  function ownerElemIdx(){
+    var y = sharedState.ownerYear;
+    if (!y) return null;
+    return STEM_ELEM_IDX[((y - 4) % 10 + 10) % 10];
+  }
+  function buildOhengText(){
+    var name = sharedState.dogName || '우리 아이';
+    if (sharedState.sajuDominant == null) return null;
+    var d = sharedState.sajuDominant;
+    var t = '☯️ ' + name + '는 ' + ELEMENTS[d] + ' 기운이 가장 강해요(' + sharedState.sajuPct + '%).';
+    var o = ownerElemIdx();
+    if (o == null){
+      t += ' 보호자 태어난 해까지 넣으면 두 분의 오행 궁합도 볼 수 있어요.';
+    } else if (o === d){
+      t += ' 보호자도 같은 ' + ELEMENTS[o] + ' 기운이라, 결이 비슷해 말이 잘 통하는 비화(比和) 관계예요.';
+    } else if (EL_GEN[o] === d){
+      t += ' 보호자의 ' + ELEMENTS[o] + ' 기운이 ' + name + '를 북돋아주는 상생(相生) 관계예요.';
+    } else if (EL_GEN[d] === o){
+      t += ' ' + name + '의 기운이 보호자의 ' + ELEMENTS[o] + ' 기운을 채워주는 상생(相生) 관계예요.';
+    } else {
+      t += ' 보호자의 ' + ELEMENTS[o] + ' 기운과는 서로 조율이 필요한 상극(相剋) 관계라, 다름을 존중할수록 더 단단해져요.';
+    }
+    return t;
+  }
+
+  function buildResultCode(){
+    var parts = [
+      sharedState.dogName || '이름없음',
+      sharedState.breed || '견종미입력',
+      '멍BTI ' + (sharedState.mbtiCode || '-'),
+      '보호자 ' + (sharedState.ownerMbti || '-') + (sharedState.ownerMbti && sharedState.ownerMbtiEstimated ? '(추정)' : ''),
+      '오행 ' + (sharedState.sajuDominant != null ? elemShort(sharedState.sajuDominant) : '-'),
+      '생일 ' + (sharedState.sajuDate || '-'),
+      '보호자출생 ' + (sharedState.ownerYear || '-')
+    ];
+    var pr = sharedState.profile;
+    if (pr){
+      parts.push('애착 ' + attachType(pr).label);
+      parts.push('사랑의언어 ' + profLabel('b2', pr.b2));
+      parts.push('산책 ' + profLabel('d1', pr.d1) + '·' + profLabel('d2', pr.d2));
+      parts.push('예민 ' + profLabel('d5', pr.d5));
+      parts.push('훈련 ' + profLabel('o2', pr.o2));
+      parts.push('고민 ' + profLabel('o4', pr.o4));
+    }
+    return 'DBTI / ' + parts.join(' / ');
+  }
+
+  function won(n){ return n.toLocaleString('ko-KR') + '원'; }
+
+  function renderCombo(){
+    var hasDog = !!sharedState.mbtiCode;
+    var hasSaju = sharedState.sajuDominant != null;
+    /* 올인원 탭에서는 통합 결과 바로 아래, 다른 탭에서는 개사주 섹션 아래에 배치 */
+    var anchor = currentTab === 'premium' ? document.getElementById('aioResult') : sajuSection;
+    if (anchor && anchor.nextSibling !== comboArea) anchor.parentNode.insertBefore(comboArea, anchor.nextSibling);
+    if ((!hasDog && !hasSaju) || (currentTab === 'premium' && !sharedState.allInOneDone)){ comboArea.hidden = true; return; }
+    comboArea.hidden = false;
+
+    var name = sharedState.dogName || '우리 아이';
+    var chemi = buildChemi();
+    document.getElementById('chemiNeedDog').hidden = hasDog;
+    document.getElementById('chemiOwnerMissing').hidden = !hasDog || !!sharedState.ownerMbti;
+    document.getElementById('chemiBody').hidden = !chemi;
+    document.getElementById('chemiTitle').textContent = '보호자 × ' + name + ' 케미';
+
+    if (chemi){
+      document.getElementById('pairOwner').textContent = chemi.owner;
+      document.getElementById('pairDog').textContent = chemi.dog;
+      document.getElementById('pairDogName').textContent = name;
+      document.getElementById('chemiLine').textContent = chemi.line;
+      var chips = document.getElementById('chemiChips');
+      chips.innerHTML = '';
+      chemi.axes.forEach(function(a){
+        var c = document.createElement('span');
+        c.className = 'chip' + (a.same ? '' : ' alt');
+        c.textContent = a.name + ' · ' + (a.same ? '닮은꼴' : '보완');
+        chips.appendChild(c);
+      });
+    }
+
+    var ohengEl = document.getElementById('chemiOheng');
+    var ohengText = buildOhengText();
+    ohengEl.innerHTML = '';
+    if (ohengText){
+      ohengEl.textContent = ohengText;
+    } else {
+      ohengEl.appendChild(document.createTextNode('☯️ 개사주 탭에서 생일을 넣으면 오행 기운 요약도 함께 볼 수 있어요.'));
+      var b = document.createElement('button');
+      b.className = 'btn-ghost'; b.type = 'button'; b.textContent = '개사주 보러 가기';
+      b.addEventListener('click', function(){ showTab('saju'); window.scrollTo(0,0); });
+      ohengEl.appendChild(b);
+    }
+
+    var paywall = document.getElementById('paywallCard');
+    paywall.hidden = !chemi;
+    if (!chemi) return;
+
+    document.getElementById('paywallTitle').textContent = chemi.owner + ' 보호자 × ' + chemi.dog + ' ' + name + ' 관계 보완 가이드';
+    document.getElementById('priceText').textContent = won(CONFIG.PRICE);
+    document.getElementById('priceNote').textContent = '10페이지 PDF 리포트' + (CONFIG.FACE_ART_READY ? ' + AI 관상 일러스트 4컷' : '');
+    document.getElementById('payBtn').textContent = won(CONFIG.PRICE) + ' 결제하고 리포트 받기';
+    document.getElementById('deliveryNote').textContent = CONFIG.DELIVERY_NOTE;
+    var toc = [
+      '🌟 ' + chemi.owner + ' 보호자 × ' + chemi.dog + ' ' + name + '의 케미스트리 총평',
+      '☯️ 오행(木·火·土·金·水)으로 보는 두 존재의 기운 보완점',
+      '⚡ 자주 생기는 오해와 갈등 상황, 이렇게 풀어요',
+      '🐕 ' + name + ' 맞춤 소통 스크립트 & 산책 가이드',
+      '🍀 2026 병오년(丙午年) 두 파트너의 행운 컬러·방향·추천 활동'
+    ];
+    var tocEl = document.getElementById('paywallToc');
+    tocEl.innerHTML = '';
+    toc.forEach(function(t){
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="lock">🔒</span><span></span>';
+      li.lastChild.textContent = t;
+      tocEl.appendChild(li);
+    });
+    var art = document.createElement('li');
+    art.innerHTML = '<span class="lock">🎨</span><span>보너스: AI 관상 일러스트 4컷</span>';
+    if (!CONFIG.FACE_ART_READY){
+      var s = document.createElement('span'); s.className = 'soon'; s.textContent = '준비 중';
+      art.lastChild.appendChild(s);
+    }
+    tocEl.appendChild(art);
+    document.getElementById('teaserVisible').textContent = chemi.teaser;
+    document.getElementById('resultCode').textContent = buildResultCode();
+  }
+
+  document.getElementById('goMbtiBtn').addEventListener('click', function(){
+    showTab('mbti');
+    mbtiResult.hidden = true; mbtiQuiz.hidden = true; mbtiIntro.hidden = false;
+    window.scrollTo(0,0);
+  });
+
+  document.getElementById('copyCodeBtn').addEventListener('click', function(){
+    var btn = this;
+    try{
+      navigator.clipboard.writeText(buildResultCode()).then(function(){
+        btn.textContent = '복사됨!'; setTimeout(function(){ btn.textContent = '복사'; }, 1500);
+      }).catch(function(){ btn.textContent = '실패'; });
+    }catch(e){ btn.textContent = '실패'; }
+  });
+
+  var payNotice = document.getElementById('payNotice');
+  function goPay(url){
+    if (url){ window.open(url, '_blank', 'noopener'); return; }
+    payNotice.textContent = CONFIG.PAY_NOT_READY;
+    payNotice.hidden = false;
+  }
+  document.getElementById('payBtn').addEventListener('click', function(){ goPay(CONFIG.PAYMENT_URL); });
+
+  /* ---------- Instagram story image + coupon ---------- */
+  function roundRect(x, l, t, w, h, r){
+    x.beginPath(); x.moveTo(l + r, t); x.arcTo(l + w, t, l + w, t + h, r); x.arcTo(l + w, t + h, l, t + h, r);
+    x.arcTo(l, t + h, l, t, r); x.arcTo(l, t, l + w, t, r); x.closePath();
+  }
+  function wrapText(x, text, cx, y, maxW, lh){
+    var words = String(text).split(' '), line = '', lines = [];
+    words.forEach(function(w){
+      var test = line ? line + ' ' + w : w;
+      if (x.measureText(test).width > maxW && line){ lines.push(line); line = w; } else { line = test; }
+    });
+    if (line) lines.push(line);
+    lines.forEach(function(l, i){ x.fillText(l, cx, y + i * lh); });
+    return y + lines.length * lh;
+  }
+  async function makeStoryImage(){
+    var W = 1080, H = 1920;
+    var c = document.createElement('canvas'); c.width = W; c.height = H;
+    var x = c.getContext('2d');
+    try{ await Promise.all([document.fonts.load('700 60px "Noto Sans KR"'), document.fonts.load('700 200px "Gaegu"')]); }catch(e){}
+    var g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#2A1458'); g.addColorStop(1, '#FF6F59');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.textAlign = 'center';
+    x.fillStyle = '#FFFFFF'; x.font = '700 56px "Noto Sans KR", sans-serif';
+    x.fillText('🐾 멍BTI & 개사주', W/2, 200);
+    roundRect(x, 80, 280, W - 160, 1300, 60); x.fillStyle = 'rgba(255,255,255,0.96)'; x.fill();
+
+    var name = sharedState.dogName || '우리 아이';
+    var info = TYPES[sharedState.mbtiCode];
+    x.fillStyle = '#5B4B82'; x.font = '700 44px "Noto Sans KR", sans-serif';
+    x.fillText(name + '의 멍BTI', W/2, 410);
+    x.fillStyle = '#5C1C12'; x.font = '700 210px "Gaegu", "Noto Sans KR", sans-serif';
+    x.fillText(sharedState.mbtiCode, W/2, 630);
+    x.fillStyle = '#241243'; x.font = '800 62px "Noto Sans KR", sans-serif';
+    var y = wrapText(x, info.title, W/2, 750, W - 280, 76);
+
+    var chemi = buildChemi();
+    if (chemi){
+      x.fillStyle = '#FF6F59'; x.font = '800 50px "Noto Sans KR", sans-serif';
+      x.fillText(chemi.owner + ' 보호자  ×  ' + chemi.dog + ' ' + name, W/2, y + 80);
+      x.fillStyle = '#241243'; x.font = '500 44px "Noto Sans KR", sans-serif';
+      y = wrapText(x, chemi.line, W/2, y + 170, W - 300, 64);
+    }
+    var o = buildOhengText();
+    if (o){
+      x.fillStyle = '#5B4B82'; x.font = '500 38px "Noto Sans KR", sans-serif';
+      wrapText(x, '☯️ ' + name + '는 ' + ELEMENTS[sharedState.sajuDominant] + ' 기운이 가장 강해요', W/2, y + 70, W - 300, 54);
+    }
+    x.fillStyle = '#FFFFFF'; x.font = '800 54px "Noto Sans KR", sans-serif';
+    x.fillText('우리 강아지도 해보기 👉', W/2, 1720);
+    x.font = '600 40px "Noto Sans KR", sans-serif';
+    x.fillText(CONFIG.SITE_URL.replace(/^https?:\/\//, '').replace(/\/$/, ''), W/2, 1790);
+    return await new Promise(function(res){ c.toBlob(res, 'image/png'); });
+  }
+
+  var storyBtn = document.getElementById('storyBtn');
+  var couponBox = document.getElementById('couponBox');
+  storyBtn.addEventListener('click', async function(){
+    var label = storyBtn.textContent;
+    storyBtn.disabled = true; storyBtn.textContent = '공유 이미지 만드는 중...';
+    var mode = null;
+    try{
+      var blob = await makeStoryImage();
+      var file = new File([blob], 'mungbti-result.png', {type:'image/png'});
+      if (navigator.canShare && navigator.canShare({files:[file]})){
+        try{ await navigator.share({files:[file], text:'우리 강아지 멍BTI 결과 🐾 ' + CONFIG.SITE_URL}); mode = 'shared'; }
+        catch(e){ mode = null; }
+      } else {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob); a.download = 'mungbti-result.png';
+        document.body.appendChild(a); a.click(); a.remove();
+        mode = 'downloaded';
+      }
+    }catch(e){ mode = null; }
+    storyBtn.disabled = false; storyBtn.textContent = label;
+    if (mode) revealCoupon(mode);
+  });
+
+  function revealCoupon(mode){
+    var half = Math.round(CONFIG.PRICE / 2);
+    couponBox.innerHTML = '';
+    var p1 = document.createElement('div');
+    p1.innerHTML = '🎉 할인 코드 <strong></strong> 발급!';
+    p1.querySelector('strong').textContent = CONFIG.COUPON_CODE;
+    couponBox.appendChild(p1);
+    var p2 = document.createElement('div');
+    p2.textContent = (mode === 'downloaded' ? '저장된 결과 이미지를 인스타그램 스토리에 올려주세요. ' : '') +
+      '스토리에 올린 화면을 캡처해 결제 요청사항에 할인 코드와 함께 남겨주시면 확인 후 50% 할인가(' + won(half) + ')로 리포트를 보내드려요.';
+    couponBox.appendChild(p2);
+    var btn = document.createElement('button');
+    btn.className = 'btn-primary'; btn.type = 'button';
+    btn.textContent = won(half) + ' 할인가로 결제하기';
+    btn.addEventListener('click', function(){ goPay(CONFIG.DISCOUNT_PAYMENT_URL); });
+    couponBox.appendChild(btn);
+    couponBox.hidden = false;
+  }
+
+  /* =====================================================
+     ALL-IN-ONE (AI 프리미엄 탭)
+     반려견 정보 → 보호자 정보 → (보호자 간이 4문항) → 성격 28문항 → 관계·생활·보호자 15문항
+     → 멍BTI·개사주·케미·생활 처방 통합 결과
+  ===================================================== */
+  var OWNER_MINI = [
+    {axis:'EI', q:'[보호자] 주말에 나는 주로 어떻게 충전하나요?', opts:[{t:'사람들을 만나며 에너지를 얻는다', v:'E'},{t:'혼자 조용히 쉬며 에너지를 채운다', v:'I'}]},
+    {axis:'SN', q:'[보호자] 산책 코스를 고를 때 나는?', opts:[{t:'익숙하고 검증된 길이 편하다', v:'S'},{t:'안 가본 새 길이 궁금하다', v:'N'}]},
+    {axis:'FT', q:'[보호자] 아이가 말썽을 피웠을 때 먼저 드는 생각은?', opts:[{t:'속상하고 서운한 마음이 먼저 든다', v:'F'},{t:'왜 그랬는지 원인부터 궁금하다', v:'T'}]},
+    {axis:'JP', q:'[보호자] 아이와 여행을 간다면 나는?', opts:[{t:'숙소·코스를 미리 다 정해둔다', v:'J'},{t:'큰 틀만 정하고 가서 정한다', v:'P'}]}
+  ];
+  var PROFILE_QS = [
+    {sec:'보호자와의 관계', key:'b1', q:'보호자가 외출 준비를 하면 {name}는?', opts:[
+      {t:'현관까지 따라와 낑낑대거나 짖는다', v:'sepHigh', s:'따라옴'},
+      {t:'잠깐 쳐다보다가 자기 자리로 간다', v:'sepMid', s:'지켜봄'},
+      {t:'신경 쓰지 않고 하던 일을 한다', v:'sepLow', s:'무관심'}]},
+    {sec:'보호자와의 관계', key:'b2', q:'{name}가 가장 좋아하는 스킨십은?', opts:[
+      {t:'품에 폭 안기기', v:'hug', s:'안기기'},
+      {t:'벌러덩 누워 배 쓰다듬기', v:'belly', s:'배 쓰다듬기'},
+      {t:'그냥 옆에 몸 붙이고 있기', v:'near', s:'붙어있기'},
+      {t:'스킨십은 짧게, 금방 자리를 뜬다', v:'short', s:'짧은 스킨십'}]},
+    {sec:'보호자와의 관계', key:'b3', q:'{name}가 보호자에게 뭔가 원할 때는?', opts:[
+      {t:'짖어서 확실하게 알린다', v:'bark', s:'짖기'},
+      {t:'앞발로 툭툭 친다', v:'paw', s:'앞발'},
+      {t:'말없이 빤히 쳐다본다', v:'stare', s:'눈빛'},
+      {t:'장난감을 물어 온다', v:'toy', s:'장난감'}]},
+    {sec:'보호자와의 관계', key:'b4', q:'집에서 {name}가 주로 머무는 자리는?', opts:[
+      {t:'보호자 바로 옆, 몸이 닿는 곳', v:'next', s:'바로 옆'},
+      {t:'보호자가 보이는 적당한 거리', v:'see', s:'보이는 곳'},
+      {t:'자기 집이나 방석', v:'own', s:'자기 자리'}]},
+    {sec:'보호자와의 관계', key:'b5', q:'보호자가 바빠서 못 놀아주면?', opts:[
+      {t:'놀아줄 때까지 계속 조른다', v:'nag', s:'조름'},
+      {t:'혼자 장난감을 갖고 논다', v:'self', s:'혼자 놂'},
+      {t:'포기하고 잠을 잔다', v:'sleep', s:'잠'}]},
+
+    {sec:'일상·산책·놀이', key:'d1', q:'{name}의 하루 산책은 보통?', opts:[
+      {t:'하루 1회가 안 될 때가 많다', v:'walk0', s:'1회 미만'},
+      {t:'하루 1회', v:'walk1', s:'1회'},
+      {t:'하루 2회 이상', v:'walk2', s:'2회 이상'}]},
+    {sec:'일상·산책·놀이', key:'d2', q:'산책할 때 {name}가 제일 좋아하는 건?', opts:[
+      {t:'구석구석 냄새 맡기', v:'sniff', s:'냄새'},
+      {t:'신나게 달리기', v:'run', s:'달리기'},
+      {t:'다른 강아지·사람 만나기', v:'friends', s:'친구'},
+      {t:'보호자 옆에서 천천히 걷기', v:'stroll', s:'천천히'}]},
+    {sec:'일상·산책·놀이', key:'d3', q:'{name}의 식사 스타일은?', opts:[
+      {t:'주자마자 허겁지겁 먹는다', v:'fast', s:'허겁지겁'},
+      {t:'적당한 속도로 잘 먹는다', v:'slow', s:'보통'},
+      {t:'입이 짧아 남기거나 깨작거린다', v:'picky', s:'입짧음'}]},
+    {sec:'일상·산책·놀이', key:'d4', q:'{name}가 가장 좋아하는 놀이는?', opts:[
+      {t:'공 던지기·터그 놀이', v:'ball', s:'공·터그'},
+      {t:'노즈워크·간식 찾기', v:'nose', s:'노즈워크'},
+      {t:'보호자와 몸으로 장난치기', v:'people', s:'몸장난'},
+      {t:'혼자 인형·장난감 갖고 놀기', v:'solo', s:'혼자 놀이'}]},
+    {sec:'일상·산책·놀이', key:'d5', q:'{name}가 유독 예민하게 반응하는 건?', opts:[
+      {t:'초인종·청소기 같은 소리', v:'sound', s:'소리'},
+      {t:'낯선 사람', v:'stranger', s:'낯선 사람'},
+      {t:'다른 강아지', v:'dogs', s:'다른 강아지'},
+      {t:'특별히 없다', v:'none', s:'없음'}]},
+
+    {sec:'보호자 스타일', key:'o1', q:'[보호자] 하루에 {name}와 온전히 함께하는 시간은?', opts:[
+      {t:'1시간 미만', v:'t1', s:'1시간 미만'},
+      {t:'1~3시간', v:'t2', s:'1~3시간'},
+      {t:'3시간 이상', v:'t3', s:'3시간 이상'}]},
+    {sec:'보호자 스타일', key:'o2', q:'[보호자] 나의 교육 스타일에 가까운 것은?', opts:[
+      {t:'간식 보상 위주', v:'treat', s:'간식 보상'},
+      {t:'말과 칭찬 위주', v:'praise', s:'칭찬 위주'},
+      {t:'아직 교육은 거의 안 한다', v:'none', s:'거의 안 함'},
+      {t:'단호하고 엄격한 편', v:'strict', s:'엄격'}]},
+    {sec:'보호자 스타일', key:'o3', q:'[보호자] 요즘 나의 생활 리듬은?', opts:[
+      {t:'출퇴근·식사 시간이 규칙적이다', v:'regular', s:'규칙적'},
+      {t:'그때그때 조금씩 다르다', v:'flex', s:'유동적'},
+      {t:'바빠서 많이 불규칙하다', v:'busy', s:'불규칙'}]},
+    {sec:'보호자 스타일', key:'o4', q:'[보호자] 요즘 {name}와 관련해 가장 큰 고민은?', opts:[
+      {t:'혼자 있을 때 불안해한다(분리불안)', v:'sep', s:'분리불안'},
+      {t:'짖음', v:'bark', s:'짖음'},
+      {t:'산책 매너(줄 당김 등)', v:'walk', s:'산책매너'},
+      {t:'편식·식습관', v:'food', s:'식습관'},
+      {t:'특별한 고민은 없다', v:'none', s:'없음'}]},
+    {sec:'보호자 스타일', key:'o5', q:'[보호자] {name}가 앞으로 이렇게 되면 좋겠다!', opts:[
+      {t:'더 활발하고 자신감 있게', v:'active', s:'활발하게'},
+      {t:'더 차분하고 안정적으로', v:'calm', s:'차분하게'},
+      {t:'지금 모습 그대로', v:'same', s:'그대로'}]}
+  ];
+
+  function profLabel(key, v){
+    var q = PROFILE_QS.filter(function(p){ return p.key === key; })[0];
+    if (!q) return '-';
+    var o = q.opts.filter(function(x){ return x.v === v; })[0];
+    return o ? o.s : '-';
+  }
+  function attachType(pr){
+    var sc = ({sepHigh:2, sepMid:1, sepLow:0})[pr.b1] + ({next:2, see:1, own:0})[pr.b4] + ({nag:2, sleep:1, self:0})[pr.b5];
+    if (sc >= 4) return {key:'close', label:'밀착형'};
+    if (sc >= 2) return {key:'balance', label:'균형형'};
+    return {key:'indep', label:'독립형'};
+  }
+  function josa(name, withB, withoutB){
+    var ch = name.charCodeAt(name.length - 1);
+    if (ch < 0xAC00 || ch > 0xD7A3) return name + withoutB;
+    return name + (((ch - 0xAC00) % 28) ? withB : withoutB);
+  }
+
+  function buildInsights(pr, dogCode, ownerCode, name){
+    var out = [];
+    var at = attachType(pr);
+    var t1 = {
+      close: josa(name,'은','는') + ' 보호자가 세상의 중심인 밀착형이에요. 함께 있을 때 가장 안정감을 느끼는 만큼, 외출 전후 인사는 짧고 담담하게 해서 "나가도 다시 돌아온다"는 경험을 쌓아주세요.',
+      balance: josa(name,'은','는') + ' 곁에 있으면 좋지만 혼자서도 괜찮은 균형형이에요. 지금의 거리감이 아이에게 편안한 상태일 가능성이 높아요.',
+      indep: josa(name,'은','는') + ' 자기 공간과 시간을 소중히 여기는 독립형이에요. 먼저 다가오지 않는다고 서운해하기보다, 아이가 다가왔을 때 확실하게 반겨주세요.'
+    }[at.key];
+    if (at.key === 'close' && pr.o1 === 't1') t1 += ' 함께하는 시간이 하루 1시간 미만이라면, 짧더라도 매일 같은 시간에 오롯이 집중하는 시간을 만들어주세요.';
+    if (at.key === 'indep' && pr.o1 === 't3') t1 += ' 함께하는 시간이 긴 편이라, 아이만의 휴식 공간을 꼭 지켜주세요.';
+    out.push({title:'💞 애착 스타일 · ' + at.label, text:t1});
+
+    var b2 = {hug:'품에 안기는 걸 좋아하는 스킨십파', belly:'배를 내어주는 신뢰 표현파', near:'붙어 있기만 해도 행복한 동행파', short:'짧고 굵은 스킨십을 선호하는 쿨한 타입'}[pr.b2];
+    var b3 = {
+      bark:'원하는 걸 짖어서 알리는 편이라, 짖을 때보다 조용히 기다릴 때 보상해주면 대화 방식이 부드러워져요.',
+      paw:'앞발로 툭툭 부르는 건 신뢰의 신호예요. "기다려" 같은 짧은 신호로 대화를 이어가 보세요.',
+      stare:'빤히 쳐다보는 건 조용한 대화 신청이에요. 눈을 맞추고 이름을 불러주는 것만으로도 충분히 통해요.',
+      toy:'장난감을 물어오는 건 놀자는 초대장이에요. 5분이라도 응해주면 신뢰가 쑥쑥 쌓여요.'
+    }[pr.b3];
+    out.push({title:'🗣️ ' + name + '의 사랑의 언어', text:josa(name,'은','는') + ' ' + b2 + '예요. ' + b3});
+
+    var walk = {
+      sniff:'냄새 맡기를 좋아하니 거리보다 "킁킁 시간"이 중요해요. 산책 중 10분쯤은 자유롭게 냄새 맡게 해주세요.',
+      run:'달리기를 좋아하니 안전한 공간에서 마음껏 뛸 기회를 만들어주세요.',
+      friends:'친구를 좋아하니 성향이 맞는 친구와의 짧은 만남이 최고의 보상이에요.',
+      stroll:'천천히 걷는 걸 좋아하니 속도보다 꾸준함이 중요해요.'
+    }[pr.d2];
+    if (pr.d1 === 'walk0') walk += ' 지금은 산책이 하루 1회 미만이라, 짧게라도 매일 나가는 것부터 시작해보세요.';
+    if (pr.d1 === 'walk2') walk += ' 하루 2회 이상 나가는 지금 루틴이 아주 좋아요.';
+    walk += ' ' + {ball:'집에서는 공·터그 놀이로 에너지를 발산시켜 주세요.', nose:'집에서는 노즈워크로 머리를 쓰게 해주면 만족도가 높아요.', people:'보호자와 몸으로 하는 장난이 최고의 교감 시간이에요.', solo:'혼자 노는 장난감을 몇 개 돌려가며 바꿔주면 지루함을 줄일 수 있어요.'}[pr.d4];
+    if (dogCode[0] === 'I' && pr.d2 === 'friends') walk += ' 다만 내향형인 만큼 만남은 짧고 소규모로 해주세요.';
+    out.push({title:'🦮 산책·놀이 처방', text:walk});
+
+    var sens = {
+      sound:'초인종·청소기 같은 소리에 예민해요. 소리가 날 때 간식을 주며 "좋은 일이 생기는 소리"로 바꿔주는 연습이 도움이 될 수 있어요.',
+      stranger:'낯선 사람에게 예민해요. 손님이 먼저 다가가지 않게 하고, 아이가 스스로 다가갈 때까지 기다려 주세요.',
+      dogs:'다른 강아지에게 예민해요. 산책할 때 거리를 넉넉히 두고, 차분하게 지나가면 보상해주세요.',
+      none:'특별히 예민한 자극이 없는 편이라, 새로운 경험을 넓혀가기 좋아요.'
+    }[pr.d5];
+    if (pr.d3 === 'picky') sens += ' 입이 짧은 편이니 식사 시간을 정해두고 일정 시간이 지나면 치우는 루틴을 시도해볼 만해요.';
+    if (pr.d3 === 'fast') sens += ' 허겁지겁 먹는 편이라 천천히 먹게 돕는 식기를 고려해볼 만해요.';
+    out.push({title:'⚠️ 예민 포인트 케어', text:sens});
+
+    var style;
+    if (pr.o2 === 'strict') style = '단호한 교육은 아이를 위축시킬 수 있어요. 잘했을 때 보상하는 긍정 강화로 조금씩 바꿔보면 관계가 한결 부드러워질 수 있어요.';
+    else if (pr.o2 === 'treat') style = '간식 보상은 대부분의 아이에게 잘 통해요. ' + (dogCode[2] === 'T' ? '목표가 분명한 ' + josa(name,'이','') + '에게 특히 효과적이에요.' : '감성파 ' + josa(name,'이','') + '에겐 간식과 함께 다정한 칭찬을 꼭 곁들여 주세요.');
+    else if (pr.o2 === 'praise') style = dogCode[2] === 'F' ? '감정 교감형인 ' + josa(name,'이','') + '에게 칭찬 위주의 교육은 아주 잘 맞아요.' : josa(name,'은','는') + ' 말보다 확실한 보상에 더 반응할 수 있어요. 칭찬에 작은 간식을 더해보세요.';
+    else style = '하루 5분, "앉아·기다려" 같은 짧은 교육부터 시작하면 서로의 신호를 읽기가 훨씬 쉬워져요.';
+    var dogJ = dogCode[3] === 'J';
+    if (pr.o3 === 'regular') style += dogJ ? ' 규칙적인 보호자와 계획형 ' + josa(name,'이','') + '는 루틴 궁합이 좋아요.' : ' 보호자의 규칙적인 리듬이 자유로운 ' + josa(name,'이','') + '에게 안정감을 줘요.';
+    else if (dogJ) style += ' 루틴을 좋아하는 ' + josa(name,'이','') + '에게 들쭉날쭉한 일정은 스트레스가 될 수 있어요. 밥·산책 시간만큼은 고정해 주세요.';
+    else style += ' 즉흥형 ' + josa(name,'이','') + '는 일정이 조금 달라져도 괜찮지만, 하루 한 번 함께하는 시간은 꼭 지켜주세요.';
+    out.push({title:'👤 보호자 ' + ownerCode + ' 스타일 × ' + name, text:style});
+
+    var worry = {
+      sep:'분리불안이 고민이라면 외출 신호(열쇠·신발)에 무뎌지게 하는 연습과 아주 짧은 외출부터 늘려가는 방법이 흔히 쓰여요. 증상이 심하다면 수의사나 반려견 행동 전문가와 꼭 상담해 주세요.',
+      bark:'짖음이 고민이라면 무엇에 짖는지(소리·사람·요구) 며칠간 기록해 보세요. 원인에 따라 해법이 달라져요.',
+      walk:'산책 매너가 고민이라면 줄이 느슨할 때만 앞으로 가는 연습을 짧고 자주 해보세요.',
+      food:'식습관이 고민이라면 간식 양부터 점검해 보세요. 갑작스러운 식욕 변화가 있다면 수의사 상담이 먼저예요.',
+      none:'특별한 고민이 없다니 멋진 파트너십이에요!'
+    }[pr.o4];
+    worry += ' ' + {active:'더 활발해지길 바라신다면 새로운 놀이를 하나씩 천천히 소개해보세요.', calm:'더 차분해지길 바라신다면 "매트에서 쉬기" 같은 휴식 연습이 도움이 될 수 있어요.', same:'지금 그대로의 ' + josa(name,'이','') + '를 아껴주는 마음이 가장 큰 선물이에요.'}[pr.o5];
+    out.push({title:'🎯 지금 고민을 위한 첫걸음', text:worry});
+    return out;
+  }
+
+  var aioIntro = document.getElementById('aioIntro');
+  var aioForm = document.getElementById('aioForm');
+  var aioQuiz = document.getElementById('aioQuiz');
+  var aioResultEl = document.getElementById('aioResult');
+  var aioOwnerSel = document.getElementById('aioOwnerMbti');
+  aioOwnerSel.innerHTML = '<option value="?">잘 모르겠어요 (간단 4문항으로 알아보기)</option>' +
+    MBTI_LIST.map(function(m){ return '<option value="' + m + '">' + m + '</option>'; }).join('');
+
+  var aio = {formStep:0, items:[], answers:[], qi:0, data:{}};
+  var AIO_FORM_STEPS = 2;
+  function aioTotal(){ return AIO_FORM_STEPS + (aio.items.length || (QUESTIONS.length + PROFILE_QS.length)); }
+  function aioSetProgress(pos, labelEl, fillEl){
+    var total = aioTotal();
+    labelEl.textContent = '단계 ' + (pos + 1) + ' / ' + total;
+    fillEl.style.width = (((pos + 1) / total) * 100).toFixed(1) + '%';
+  }
+
+  function aioShowForm(step){
+    aio.formStep = step;
+    aioIntro.hidden = true; aioQuiz.hidden = true; aioResultEl.hidden = true; aioForm.hidden = false;
+    document.getElementById('aioDogStep').hidden = step !== 0;
+    document.getElementById('aioOwnerStep').hidden = step !== 1;
+    document.getElementById('aioFormCat').textContent = step === 0 ? '반려견 정보' : '보호자 정보';
+    document.getElementById('aioFormBack').textContent = step === 0 ? '처음으로' : '이전';
+    document.getElementById('aioFormErr').hidden = true;
+    aioSetProgress(step, document.getElementById('aioFormLabel'), document.getElementById('aioFormFill'));
+  }
+
+  document.getElementById('aioStartBtn').addEventListener('click', function(){
+    if (sharedState.dogName && !document.getElementById('aioName').value && sharedState.dogName !== '우리 강아지') document.getElementById('aioName').value = sharedState.dogName;
+    if (sharedState.breed && !document.getElementById('aioBreed').value) document.getElementById('aioBreed').value = sharedState.breed;
+    if (sharedState.sajuDate && !document.getElementById('aioDate').value) document.getElementById('aioDate').value = sharedState.sajuDate;
+    if (sharedState.ownerMbti) aioOwnerSel.value = sharedState.ownerMbti;
+    if (sharedState.ownerYear && !document.getElementById('aioOwnerYear').value) document.getElementById('aioOwnerYear').value = sharedState.ownerYear;
+    aio.items = []; aio.answers = []; aio.qi = 0;
+    aioShowForm(0);
+  });
+
+  document.getElementById('aioFormBack').addEventListener('click', function(){
+    if (aio.formStep === 0){ aioForm.hidden = true; aioIntro.hidden = false; }
+    else aioShowForm(0);
+  });
+
+  document.getElementById('aioFormNext').addEventListener('click', function(){
+    var err = document.getElementById('aioFormErr');
+    if (aio.formStep === 0){
+      var date = document.getElementById('aioDate').value;
+      if (!date){ err.textContent = '사주 분석을 위해 생년월일(또는 입양일)을 넣어주세요.'; err.hidden = false; document.getElementById('aioDate').focus(); return; }
+      aio.data.name = (document.getElementById('aioName').value || '').trim() || '우리 강아지';
+      aio.data.breed = (document.getElementById('aioBreed').value || '').trim();
+      aio.data.date = date;
+      aio.data.sex = document.getElementById('aioSex').value;
+      aio.data.together = document.getElementById('aioTogether').value;
+      aioShowForm(1);
+      return;
+    }
+    var yRaw = document.getElementById('aioOwnerYear').value;
+    var y = yRaw ? parseInt(yRaw, 10) : null;
+    if (y && (y < 1920 || y > 2026)){ err.textContent = '보호자 태어난 해를 다시 확인해 주세요.'; err.hidden = false; return; }
+    aio.data.owner = aioOwnerSel.value;
+    aio.data.ownerYear = y;
+    aio.items = buildAioItems();
+    aio.answers = []; aio.qi = 0;
+    aioForm.hidden = true; aioQuiz.hidden = false;
+    renderAioQ();
+  });
+
+  function buildAioItems(){
+    var items = [];
+    if (aio.data.owner === '?'){
+      OWNER_MINI.forEach(function(o){ items.push({kind:'owner', sec:'보호자 성향(간이)', axis:o.axis, q:o.q, opts:o.opts}); });
+    }
+    QUESTIONS.forEach(function(q){
+      items.push({kind:'mbti', sec:'반려견 성격 · ' + AXIS_CAT[q.axis], q:q.q, opts:[{t:q.a.t, v:q.a.l},{t:q.b.t, v:q.b.l}]});
+    });
+    PROFILE_QS.forEach(function(p){ items.push({kind:'profile', sec:p.sec, key:p.key, q:p.q, opts:p.opts}); });
+    return items;
+  }
+
+  function renderAioQ(){
+    var it = aio.items[aio.qi];
+    var name = aio.data.name;
+    aioSetProgress(AIO_FORM_STEPS + aio.qi, document.getElementById('aioQLabel'), document.getElementById('aioQFill'));
+    document.getElementById('aioQCat').textContent = it.sec;
+    document.getElementById('aioQText').textContent = it.q.replace(/\{name\}가/g, josa(name,'이가','가')).replace(/\{name\}는/g, josa(name,'은','는')).replace(/\{name\}와/g, josa(name,'과','와')).replace(/\{name\}/g, name).replace('우리 강아지는', josa(name,'은','는'));
+    var box = document.getElementById('aioOpts');
+    box.innerHTML = '';
+    it.opts.forEach(function(o){
+      var b = document.createElement('button');
+      b.className = 'opt-btn'; b.type = 'button'; b.textContent = o.t;
+      if (aio.answers[aio.qi] === o.v) b.style.borderColor = 'var(--accent-2)';
+      b.addEventListener('click', function(){
+        aio.answers[aio.qi] = o.v;
+        aio.qi++;
+        if (aio.qi >= aio.items.length) finishAio(); else renderAioQ();
+      });
+      box.appendChild(b);
+    });
+  }
+
+  document.getElementById('aioPrevBtn').addEventListener('click', function(){
+    if (aio.qi === 0){ aioQuiz.hidden = true; aioShowForm(1); return; }
+    aio.qi--; renderAioQ();
+  });
+
+  function finishAio(){
+    var c = {E:0,I:0,S:0,N:0,F:0,T:0,J:0,P:0}, oc = {}, prof = {};
+    aio.items.forEach(function(it, i){
+      var v = aio.answers[i];
+      if (it.kind === 'mbti') c[v]++;
+      else if (it.kind === 'owner') oc[it.axis] = v;
+      else prof[it.key] = v;
+    });
+    var ownerCode = aio.data.owner !== '?' ? aio.data.owner : (oc.EI + oc.SN + oc.FT + oc.JP);
+    var name = aio.data.name;
+
+    /* 멍BTI 탭 결과 동기화 */
+    sharedState.profile = prof;
+    sharedState.ownerMbtiEstimated = aio.data.owner === '?';
+    if (aio.data.breed) sharedState.breed = aio.data.breed;
+    counts = c; dogName = name; sharedState.dogName = name;
+    document.getElementById('dogNameInput').value = name === '우리 강아지' ? '' : name;
+    mbtiIntro.hidden = true;
+    finishQuiz();
+
+    /* 개사주 탭 결과 동기화 */
+    document.getElementById('sajuNameInput').value = name === '우리 강아지' ? '' : name;
+    sajuDateInput.value = aio.data.date;
+    document.getElementById('sajuBreedInput').value = aio.data.breed || '';
+    document.getElementById('sajuOwnerYearInput').value = aio.data.ownerYear || '';
+    sajuSubmitBtn.click();
+    sharedState.dogName = name;
+
+    sharedState.allInOneDone = true;
+    renderAioResult(ownerCode, prof);
+    setOwnerMbti(ownerCode);   /* renderCombo 포함 */
+  }
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function renderAioResult(ownerCode, prof){
+    var name = aio.data.name;
+    var code = sharedState.mbtiCode;
+    var info = TYPES[code];
+    var r = computeSaju(name, aio.data.date, aio.data.breed, aio.data.ownerYear);
+
+    document.getElementById('aioResTitle').textContent = name + ' × 보호자 올인원 분석';
+    var head = document.getElementById('aioResHead');
+    head.innerHTML = '';
+    head.appendChild(document.createTextNode('보호자 '));
+    head.appendChild(el('b', null, ownerCode + (sharedState.ownerMbtiEstimated ? '(간이 추정)' : '')));
+    head.appendChild(document.createTextNode('  ×  '));
+    head.appendChild(el('b', null, code + ' ' + name));
+    var meta = [aio.data.breed, aio.data.sex, aio.data.together ? '함께한 지 ' + aio.data.together : ''].filter(Boolean).join(' · ');
+    if (meta){ head.appendChild(el('div', 'price-note', meta)); }
+
+    var body = document.getElementById('aioResBody');
+    body.innerHTML = '';
+
+    /* A. 멍BTI */
+    var A = el('div', 'result-block');
+    A.appendChild(el('h3', null, '🐾 성격 유형 · 멍BTI'));
+    var badge = el('div', 'type-badge');
+    badge.appendChild(el('div', 'type-letters', code));
+    badge.appendChild(el('div', 'type-name', josa(name,'은','는') + ' ' + info.title));
+    A.appendChild(badge);
+    A.appendChild(el('p', 'result-desc', info.desc));
+    var chips = el('div', 'chip-row');
+    info.traits.forEach(function(t){ chips.appendChild(el('span', 'chip', t)); });
+    A.appendChild(chips);
+    AXES.forEach(function(ax){
+      var ca = counts[ax.a], cb = counts[ax.b], pctA = Math.round(ca / (ca + cb) * 100);
+      var row = el('div', 'axis-row');
+      var lab = el('div', 'axis-labels');
+      lab.appendChild(el('span', null, ax.aLabel + ' ' + pctA + '%'));
+      lab.appendChild(el('span', null, ax.bLabel + ' ' + (100 - pctA) + '%'));
+      var bar = el('div', 'axis-bar');
+      var fa = el('div', 'axis-fill-a'); fa.style.width = pctA + '%';
+      var fb = el('div', 'axis-fill-b'); fb.style.width = (100 - pctA) + '%';
+      bar.appendChild(fa); bar.appendChild(fb);
+      row.appendChild(lab); row.appendChild(bar);
+      A.appendChild(row);
+    });
+    var grid = el('div', 'info-grid');
+    [['훈련 팁', info.tip], ['주의할 점', info.caution]].forEach(function(p){
+      var t = el('div', 'info-tile'); t.appendChild(el('div', 'k', p[0])); t.appendChild(el('div', 'v', p[1])); grid.appendChild(t);
+    });
+    A.appendChild(grid);
+    body.appendChild(A);
+
+    /* B. 개사주 */
+    var B = el('div', 'result-block');
+    B.appendChild(el('h3', null, '🔮 사주 · 오행 기운'));
+    var sum = el('div', 'saju-summary');
+    sum.appendChild(el('div', 'animal-badge', BRANCH_EMOJI[r.branchIdx]));
+    var txt = el('div', 'txt');
+    txt.appendChild(el('div', null, name + '의 사주'));
+    txt.appendChild(el('div', null, r.year + '년생 · ' + BRANCH_ANIMAL[r.branchIdx] + '띠 · ' + STEM_NAME[r.stemIdx] + STEM_HANJA[r.stemIdx]));
+    sum.appendChild(txt);
+    B.appendChild(sum);
+    var oh = el('div', 'oheng-row');
+    ELEMENTS.forEach(function(elName, i){
+      var it = el('div', 'oheng-item');
+      it.appendChild(el('div', 'oheng-name', elName));
+      var tr = el('div', 'oheng-track'); var f = el('div', 'oheng-fill');
+      f.style.width = r.pct[i] + '%'; f.style.background = ELEMENT_COLORS[i];
+      tr.appendChild(f); it.appendChild(tr);
+      it.appendChild(el('div', 'oheng-pct', r.pct[i] + '%'));
+      oh.appendChild(it);
+    });
+    B.appendChild(oh);
+    B.appendChild(el('p', 'result-desc', ELEMENT_TEXT[r.dominantIdx]));
+    var fl = el('div', 'fortune-list');
+    [r.categories[0], r.categories[4], r.categories[7]].forEach(function(cat){
+      var fc = el('div', 'fortune-card'); fc.appendChild(el('span', 'tag', cat.tag)); fc.appendChild(el('p', null, cat.text)); fl.appendChild(fc);
+    });
+    if (r.ownerCompat){
+      var oc = el('div', 'fortune-card'); oc.appendChild(el('span', 'tag', '보호자와의 띠 궁합')); oc.appendChild(el('p', null, r.ownerCompat)); fl.appendChild(oc);
+    }
+    B.appendChild(fl);
+    body.appendChild(B);
+
+    /* C. 생활·관계 프로필 */
+    var C = el('div', 'result-block');
+    C.appendChild(el('h3', null, '🏡 생활·관계 맞춤 처방'));
+    buildInsights(prof, code, ownerCode, name).forEach(function(ins){
+      var card = el('div', 'insight');
+      card.appendChild(el('div', 'i-title', ins.title));
+      card.appendChild(el('p', null, ins.text));
+      C.appendChild(card);
+    });
+    body.appendChild(C);
+
+    aioQuiz.hidden = true; aioForm.hidden = true; aioIntro.hidden = true;
+    aioResultEl.hidden = false;
+    premiumForm.hidden = false; premiumResultCard.hidden = true;
+    window.scrollTo(0, 0);
+  }
+
+  document.getElementById('aioRedoBtn').addEventListener('click', function(){
+    aioResultEl.hidden = true;
+    sharedState.allInOneDone = false;
+    renderCombo();
+    aio.items = []; aio.answers = []; aio.qi = 0;
+    aioShowForm(0);
   });
 
   /* =====================================================
@@ -938,6 +1900,8 @@ input:focus{border-color:var(--accent-2);}
     if (sharedState.breed) context.push('견종: ' + sharedState.breed);
     if (sharedState.mbtiCode) context.push('멍BTI 결과: ' + sharedState.mbtiCode + ' (' + sharedState.mbtiTitle + ')');
     if (sharedState.sajuAnimal) context.push('사주상 띠: ' + sharedState.sajuAnimal + '띠');
+    if (sharedState.ownerMbti) context.push('보호자 MBTI: ' + sharedState.ownerMbti);
+    if (sharedState.profile) context.push('애착 스타일: ' + attachType(sharedState.profile).label);
 
     var lines = [
       '너는 반려견 사진을 보고 재미로 "개관상"을 봐주는 엔터테인먼트 캐릭터야.',
