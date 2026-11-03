@@ -1,5 +1,16 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="ko"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>멍BTI & 개사주</title>
+<meta name="description" content="강아지 성격유형 멍BTI, 개사주, 보호자 MBTI 케미까지 한 번에 보는 반려견 분석">
+<!-- PWA: 매니페스트 · 테마 색 -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#FF6F59">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<!-- PWA: iOS(사파리 '홈 화면에 추가')용 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="멍BTI">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap');
 
@@ -143,6 +154,7 @@ input:focus{border-color:var(--accent-2);}
 }
 .opt-btn:last-child{margin-bottom:0;}
 .opt-btn:hover{border-color:var(--accent-2); background:var(--accent-2-soft); color:var(--accent-2-ink);}
+.opt-btn.opt-neutral{background:transparent; border-style:dashed; color:var(--ink-soft); font-size:14px; text-align:center;}
 
 .type-badge{
   display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
@@ -256,6 +268,16 @@ select.owner-mbti{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
 .coupon-box strong{font-size:19px; letter-spacing:.06em;}
 .coupon-box .btn-primary{margin-top:10px;}
 
+/* upsell to 우리 사이 리포트 */
+.upsell{margin-top:22px; padding:20px 18px; border-radius:18px; text-align:center;
+  background:linear-gradient(160deg,var(--accent-2-soft),var(--accent-soft)); border:1px solid var(--line);}
+.upsell-eyebrow{font-size:12px; font-weight:700; color:var(--accent-2-ink); letter-spacing:.03em; margin-bottom:6px;}
+.upsell-title{font-family:'Gaegu','Noto Sans KR',sans-serif; font-size:23px; font-weight:700; color:var(--ink); margin-bottom:8px; line-height:1.3;}
+.upsell-text{font-size:13.5px; color:var(--ink-soft); margin-bottom:14px; text-align:left;}
+.upsell-note{font-size:12px; color:var(--ink-faint); margin-top:8px;}
+.reuse-row{display:flex; gap:10px; align-items:flex-start; padding:12px 14px; border-radius:13px; background:var(--accent-soft); color:var(--accent-ink); font-size:13.5px; font-weight:600; margin-bottom:16px; cursor:pointer; line-height:1.5;}
+.reuse-row input{margin-top:3px; width:18px; height:18px; flex:none; accent-color:var(--accent-2);}
+
 /* all-in-one */
 .step-list{margin:0 0 20px; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;}
 .step-list li{font-size:12.5px; font-weight:600; color:var(--ink-soft); padding:10px 12px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line); line-height:1.45;}
@@ -289,14 +311,14 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     </svg>
     <div>
       <h1>멍BTI &amp; 개사주</h1>
-      <p>성격 유형 테스트, 사주풀이, 사진 기반 AI 프리미엄 리포트까지</p>
+      <p>우리 아이 성격 유형과 사주, 그리고 보호자와의 인연까지</p>
     </div>
   </div>
 
   <div class="tabbar" role="tablist">
     <button class="tabbtn" id="tabMbtiBtn" role="tab" aria-selected="true">🐾 멍BTI</button>
     <button class="tabbtn" id="tabSajuBtn" role="tab" aria-selected="false">🔮 개사주</button>
-    <button class="tabbtn" id="tabPremiumBtn" role="tab" aria-selected="false">📸 AI 프리미엄<span class="tab-badge">테스트 중</span></button>
+    <button class="tabbtn" id="tabPremiumBtn" role="tab" aria-selected="false">💞 우리 사이<span class="tab-badge">프리미엄</span></button>
   </div>
 
   <!-- ===================== MBTI SECTION ===================== -->
@@ -310,9 +332,6 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       <input type="text" id="dogNameInput" placeholder="예: 초코, 뭉치...">
       <label class="field" for="dogBreedInput">견종 (선택)</label>
       <input type="text" id="dogBreedInput" placeholder="예: 말티즈, 믹스견...">
-      <label class="field" for="ownerMbtiA">보호자(나)의 MBTI (선택)</label>
-      <select id="ownerMbtiA" class="owner-mbti"></select>
-      <p class="field-hint">고르면 결과에서 보호자 × 우리 아이 케미를 함께 풀어드려요.</p>
       <button class="btn-primary" id="startQuizBtn">테스트 시작하기</button>
     </div>
 
@@ -323,8 +342,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       </div>
       <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:3.6%"></div></div>
       <div class="q-text" id="qText"></div>
-      <button class="opt-btn" id="optA"></button>
-      <button class="opt-btn" id="optB"></button>
+      <div id="mbtiOpts"></div>
       <button class="btn-back" id="prevQBtn" disabled>← 이전 질문</button>
     </div>
 
@@ -350,6 +368,14 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
         <button class="btn-ghost" id="retakeBtn">다시 하기</button>
         <button class="btn-ghost" id="copyResultBtn">결과 복사하기</button>
       </div>
+
+      <div class="upsell">
+        <div class="upsell-eyebrow">💞 우리 사이 리포트</div>
+        <div class="upsell-title">이 아이는 왜 하필 나를 닮았을까요?</div>
+        <p class="upsell-text" data-upsell="mbti">강아지는 함께 사는 사람을 닮아간대요. 보호자님의 MBTI와 사주까지 함께 풀어, 두 존재가 서로를 어떻게 채워주는지, 어디서 오해가 생기는지, 어떻게 말을 걸면 더 가까워지는지 알려드려요.</p>
+        <button class="btn-primary upsell-btn" type="button">우리 사이 리포트 보러 가기</button>
+        <p class="upsell-note">방금 한 멍BTI 결과를 이어서 쓸 수 있어요</p>
+      </div>
     </div>
 
   </section>
@@ -371,12 +397,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       <label class="field" for="sajuBreedInput">견종 (선택)</label>
       <input type="text" id="sajuBreedInput" placeholder="예: 말티즈, 믹스견...">
 
-      <label class="field" for="sajuOwnerYearInput">보호자 태어난 해 (선택, 궁합 풀이용)</label>
-      <input type="number" id="sajuOwnerYearInput" placeholder="예: 1992" min="1920" max="2026">
-
-      <label class="field" for="ownerMbtiB">보호자(나)의 MBTI (선택)</label>
-      <select id="ownerMbtiB" class="owner-mbti"></select>
-      <p class="field-hint">태어난 해와 MBTI를 넣으면 보호자와의 오행·성격 케미까지 볼 수 있어요.</p>
+      <input type="hidden" id="sajuOwnerYearInput" value="">
 
       <button class="btn-primary" id="sajuSubmitBtn">사주 보기</button>
     </div>
@@ -398,6 +419,14 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
 
       <div class="btn-row" style="margin-top:18px;">
         <button class="btn-ghost" id="sajuRedoBtn">다시 보기</button>
+      </div>
+
+      <div class="upsell">
+        <div class="upsell-eyebrow">💞 우리 사이 리포트</div>
+        <div class="upsell-title">우리 둘, 어떤 인연으로 만났을까요?</div>
+        <p class="upsell-text" data-upsell="saju">보호자님의 기운과 아이의 기운이 서로를 어떻게 북돋우고 채워주는지, 보호자 MBTI와 생활 습관까지 엮어서 두 존재의 인연을 깊이 풀어드려요.</p>
+        <button class="btn-primary upsell-btn" type="button">우리 사이 리포트 보러 가기</button>
+        <p class="upsell-note">입력한 생일은 그대로 이어져요</p>
       </div>
     </div>
 
@@ -467,9 +496,9 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   <section id="premiumSection" hidden>
 
     <div class="card" id="aioIntro">
-      <span class="eyebrow gold">ALL-IN-ONE · 보호자 연계 정밀 분석</span>
-      <h2 class="section-title">우리 아이 × 보호자 올인원 분석</h2>
-      <p class="section-sub">반려견과 보호자 정보, 성격·관계·생활 질문에 한 번만 답하면 멍BTI, 개사주, 보호자 케미, 생활 처방까지 한 화면에 모아 보여드려요. 약 7분 걸려요.</p>
+      <span class="eyebrow gold">PREMIUM · 우리 사이 리포트</span>
+      <h2 class="section-title">너와 나, 우리 사이 리포트</h2>
+      <p class="section-sub">같은 집에서 같은 하루를 보내는 우리, 서로를 얼마나 닮아 있을까요? 보호자님의 성향과 기운, 아이의 성격과 사주, 둘만의 일상을 함께 엮어 두 존재가 서로를 채워주는 방식과 더 가까워지는 방법을 풀어드려요. 약 7분 걸려요(멍BTI를 먼저 했다면 약 3분).</p>
       <ol class="step-list">
         <li><b>STEP 1</b>반려견 정보·생일</li>
         <li><b>STEP 2</b>보호자 MBTI·태어난 해</li>
@@ -478,7 +507,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
         <li><b>STEP 5</b>일상·산책·놀이 습관</li>
         <li><b>STEP 6</b>보호자 스타일·고민</li>
       </ol>
-      <button class="btn-primary" id="aioStartBtn">올인원 분석 시작하기</button>
+      <button class="btn-primary" id="aioStartBtn">우리 사이 알아보기</button>
     </div>
 
     <div class="card" id="aioForm" hidden>
@@ -520,6 +549,10 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
         <select id="aioOwnerMbti" class="aio-select"></select>
         <label class="field" for="aioOwnerYear">보호자 태어난 해 (선택, 오행 궁합용)</label>
         <input type="number" id="aioOwnerYear" placeholder="예: 1992" min="1920" max="2026">
+        <label class="reuse-row" id="aioReuseRow" hidden>
+          <input type="checkbox" id="aioReuse" checked>
+          <span>앞서 한 멍BTI 결과(<b id="aioReuseCode"></b>)를 이어서 쓸게요 — 반려견 성격 28문항을 건너뛰어요</span>
+        </label>
       </div>
 
       <div id="aioFormErr" class="notice-box warn" hidden></div>
@@ -541,8 +574,8 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     </div>
 
     <div class="card" id="aioResult" hidden>
-      <span class="eyebrow gold">ALL-IN-ONE REPORT</span>
-      <h2 class="section-title" id="aioResTitle">올인원 분석 결과</h2>
+      <span class="eyebrow gold">우리 사이 리포트</span>
+      <h2 class="section-title" id="aioResTitle">우리 사이 리포트</h2>
       <div class="aio-head" id="aioResHead"></div>
       <div id="aioResBody"></div>
       <p class="next-hint">👇 아래에서 보호자 케미와 맞춤 프리미엄 리포트를 확인하세요</p>
@@ -675,34 +708,37 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
      MBTI QUIZ
   ===================================================== */
   var QUESTIONS = [
-    {axis:'EI', q:'낯선 사람이 집에 놀러 오면 우리 강아지는?', a:{t:'꼬리 흔들며 냉큼 달려가 인사한다', l:'E'}, b:{t:'일단 멀리서 낯을 가리며 지켜본다', l:'I'}},
-    {axis:'EI', q:'산책하다 다른 강아지를 마주치면?', a:{t:'신나서 먼저 다가가 놀자고 조른다', l:'E'}, b:{t:'주인 뒤로 숨거나 거리를 둔다', l:'I'}},
-    {axis:'EI', q:'강아지가 많이 모이는 마당이나 카페에서는?', a:{t:'무리 한가운데서 신나게 어울린다', l:'E'}, b:{t:'구석 자리나 한두 마리랑만 논다', l:'I'}},
-    {axis:'EI', q:'집에 손님이 여러 명 오면?', a:{t:'이 사람 저 사람 돌아다니며 관심을 끈다', l:'E'}, b:{t:'조용한 방이나 자기 집으로 들어가 버린다', l:'I'}},
-    {axis:'EI', q:'처음 가보는 애견 운동장에 도착하면?', a:{t:'들어가자마자 여기저기 인사하러 다닌다', l:'E'}, b:{t:'한참 동안 보호자 곁에서 분위기를 살핀다', l:'I'}},
-    {axis:'EI', q:'가족이 외출했다 돌아오면?', a:{t:'온몸으로 점프하며 요란하게 반긴다', l:'E'}, b:{t:'꼬리만 살랑 흔들며 조용히 다가온다', l:'I'}},
-    {axis:'EI', q:'혼자 집에 있는 시간에는?', a:{t:'심심해서 낑낑대거나 현관 앞을 서성인다', l:'E'}, b:{t:'혼자 장난감을 갖고 놀거나 푹 잔다', l:'I'}},
-    {axis:'SN', q:'처음 보는 장난감을 주면?', a:{t:'익숙한 방식대로 냄새 맡고 씹는다', l:'S'}, b:{t:'예상 못한 엉뚱한 방식으로 갖고 논다', l:'N'}},
-    {axis:'SN', q:'늘 다니던 산책 코스를 바꾸면?', a:{t:'낯설어하며 원래 가던 길로 가자고 버틴다', l:'S'}, b:{t:'새로운 길을 신나게 탐험한다', l:'N'}},
-    {axis:'SN', q:'청소기, 초인종 같은 낯선 소리가 나면?', a:{t:'매번 똑같은 방식으로 반응한다', l:'S'}, b:{t:'그때그때 다르게 엉뚱한 반응을 보인다', l:'N'}},
-    {axis:'SN', q:'간식을 숨겨두고 찾게 하면?', a:{t:'냄새를 따라 한 곳씩 차근차근 뒤진다', l:'S'}, b:{t:'엉뚱한 곳부터 파헤치다 우연히 찾아낸다', l:'N'}},
-    {axis:'SN', q:'집 안 가구 배치를 바꾸면?', a:{t:'한동안 바뀐 곳마다 냄새를 맡으며 낯설어한다', l:'S'}, b:{t:'금세 새 자리를 놀이터 삼아 뛰어논다', l:'N'}},
-    {axis:'SN', q:'산책길에 처음 보는 물건(비닐봉지, 조형물)이 보이면?', a:{t:'조심스럽게 냄새부터 꼼꼼히 확인한다', l:'S'}, b:{t:'일단 앞발로 툭 건드리거나 물어본다', l:'N'}},
-    {axis:'SN', q:'늘 쓰던 장난감과 새 장난감을 같이 주면?', a:{t:'결국 익숙한 장난감으로 돌아간다', l:'S'}, b:{t:'새 장난감에 푹 빠져 헌 것은 잊는다', l:'N'}},
-    {axis:'FT', q:'주인이 시무룩하거나 슬퍼 보이면?', a:{t:'다가와 얼굴을 핥거나 곁을 지킨다', l:'F'}, b:{t:'평소처럼 자기 할 일을 한다', l:'T'}},
-    {axis:'FT', q:'혼내면 우리 강아지는?', a:{t:'한참 시무룩해서 눈치를 본다', l:'F'}, b:{t:'금방 잊고 다시 신나게 논다', l:'T'}},
-    {axis:'FT', q:'다른 강아지가 혼나는 걸 보면?', a:{t:'같이 위축되거나 다가가 위로하듯 군다', l:'F'}, b:{t:'별 신경 쓰지 않고 자기 할 일을 한다', l:'T'}},
-    {axis:'FT', q:'보호자가 다른 강아지를 쓰다듬으면?', a:{t:'서운한 듯 끼어들거나 눈치를 본다', l:'F'}, b:{t:'별 반응 없이 자기 볼일을 본다', l:'T'}},
-    {axis:'FT', q:'칭찬을 받으면?', a:{t:'몸을 비비고 뒹굴며 기쁨을 폭발시킨다', l:'F'}, b:{t:'간식이 나오는지부터 확인한다', l:'T'}},
-    {axis:'FT', q:'가족끼리 언성이 높아지면?', a:{t:'불안해하며 사이에 끼어들거나 숨는다', l:'F'}, b:{t:'크게 신경 쓰지 않고 하던 일을 한다', l:'T'}},
-    {axis:'FT', q:'원하는 게 있을 때 요구하는 방식은?', a:{t:'애처로운 눈빛과 낑낑 소리로 호소한다', l:'F'}, b:{t:'앞발로 툭툭 치거나 직접 행동으로 요구한다', l:'T'}},
-    {axis:'JP', q:'밥 시간이 다가오면?', a:{t:'시계라도 보는 듯 정확한 시간에 알린다', l:'J'}, b:{t:'배고플 때 아무 때나 조른다', l:'P'}},
-    {axis:'JP', q:'좋아하는 잠자리는?', a:{t:'늘 같은 자리만 고집한다', l:'J'}, b:{t:'그날그날 아무 데나 눕는다', l:'P'}},
-    {axis:'JP', q:'외출 준비(목줄, 하네스)를 시작하면?', a:{t:'정해진 순서대로 얌전히 기다린다', l:'J'}, b:{t:'신나서 이리저리 날뛰며 난리 난다', l:'P'}},
-    {axis:'JP', q:'산책 시간이 평소보다 늦어지면?', a:{t:'늘 나가던 시간에 현관에서 재촉한다', l:'J'}, b:{t:'언제 나가든 나가기만 하면 좋아한다', l:'P'}},
-    {axis:'JP', q:'장난감 관리 스타일은?', a:{t:'자기만의 장소에 장난감을 모아둔다', l:'J'}, b:{t:'온 집안 곳곳에 흩어 놓는다', l:'P'}},
-    {axis:'JP', q:'산책할 때 걷는 모습은?', a:{t:'일정한 속도로 늘 가던 코스를 걷는다', l:'J'}, b:{t:'냄새 따라 지그재그로 마음대로 걷는다', l:'P'}},
-    {axis:'JP', q:'밥을 먹는 방식은?', a:{t:'주자마자 한 번에 깔끔하게 비운다', l:'J'}, b:{t:'조금 먹다 놀다 다시 와서 먹는다', l:'P'}}
+    {axis:'EI', q:'낯선 사람이 집에 놀러 오면 우리 강아지는?', a:{t:'꼬리 흔들며 냉큼 달려가 인사한다', l:'E'}, am:'조금 지켜보다가 곧 다가가 인사한다', bm:'짖거나 경계하다가 시간이 지나면 다가간다', b:{t:'멀리서 낯을 가리며 끝까지 지켜본다', l:'I'}},
+    {axis:'EI', q:'산책하다 다른 강아지를 마주치면?', a:{t:'신나서 먼저 다가가 놀자고 조른다', l:'E'}, am:'상대가 다가오면 반갑게 인사한다', bm:'냄새만 살짝 맡고 금방 자리를 뜬다', b:{t:'보호자 뒤로 숨거나 거리를 둔다', l:'I'}},
+    {axis:'EI', q:'강아지가 많이 모이는 마당이나 카페에서는?', a:{t:'무리 한가운데서 신나게 어울린다', l:'E'}, am:'처음엔 쭈뼛하다가 금방 섞여 논다', bm:'맘 맞는 한두 마리하고만 논다', b:{t:'보호자 곁을 떠나지 않거나 나가고 싶어 한다', l:'I'}},
+    {axis:'EI', q:'집에 손님이 여러 명 오면?', a:{t:'이 사람 저 사람 돌아다니며 관심을 끈다', l:'E'}, am:'좋아하는 한두 사람 곁에 머문다', bm:'처음 인사만 하고 자기 자리로 간다', b:{t:'방이나 자기 집으로 들어가 버린다', l:'I'}},
+    {axis:'EI', q:'처음 가보는 애견 운동장에 도착하면?', a:{t:'들어가자마자 여기저기 인사하러 다닌다', l:'E'}, am:'잠깐 둘러보고 곧 놀기 시작한다', bm:'한참 동안 혼자 냄새 맡으며 탐색한다', b:{t:'보호자 곁에서 분위기만 살핀다', l:'I'}},
+    {axis:'EI', q:'가족이 외출했다 돌아오면?', a:{t:'온몸으로 점프하며 요란하게 반긴다', l:'E'}, am:'현관까지 달려와 꼬리를 흔든다', bm:'자리에서 일어나 천천히 다가온다', b:{t:'누운 채로 눈이나 꼬리로만 반긴다', l:'I'}},
+    {axis:'EI', q:'혼자 집에 있는 시간에는?', a:{t:'심심해서 낑낑대거나 현관 앞을 서성인다', l:'E'}, am:'창밖을 보거나 소리에 귀 기울이며 기다린다', bm:'대부분 자다가 가끔 장난감을 갖고 논다', b:{t:'아무 일 없다는 듯 푹 잔다', l:'I'}},
+
+    {axis:'SN', q:'처음 보는 장난감을 주면?', a:{t:'익숙한 방식대로 냄새 맡고 씹는다', l:'S'}, am:'조심스럽게 살펴본 뒤 평소처럼 논다', bm:'이리저리 굴려보며 새로운 방법을 찾는다', b:{t:'예상 못한 엉뚱한 방식으로 갖고 논다', l:'N'}},
+    {axis:'SN', q:'늘 다니던 산책 코스를 바꾸면?', a:{t:'원래 가던 길로 가자고 버틴다', l:'S'}, am:'머뭇거리다가 따라온다', bm:'처음엔 냄새 맡느라 느리지만 금방 신나 한다', b:{t:'새로운 길을 신나게 탐험한다', l:'N'}},
+    {axis:'SN', q:'청소기, 초인종 같은 소리가 나면?', a:{t:'매번 똑같은 방식으로 반응한다', l:'S'}, am:'대체로 비슷하게 반응한다', bm:'날마다 반응이 조금씩 다르다', b:{t:'그때그때 엉뚱한 반응을 보인다', l:'N'}},
+    {axis:'SN', q:'간식을 숨겨두고 찾게 하면?', a:{t:'냄새를 따라 한 곳씩 차근차근 뒤진다', l:'S'}, am:'전에 찾았던 곳 위주로 꼼꼼히 찾는다', bm:'이곳저곳 빠르게 돌아다니며 찾는다', b:{t:'엉뚱한 곳부터 파헤치다 우연히 찾아낸다', l:'N'}},
+    {axis:'SN', q:'집 안 가구 배치를 바꾸면?', a:{t:'한동안 바뀐 곳마다 냄새를 맡으며 낯설어한다', l:'S'}, am:'하루 이틀 살피다가 적응한다', bm:'잠깐 살피고 바로 적응한다', b:{t:'금세 새 자리를 놀이터 삼아 뛰어논다', l:'N'}},
+    {axis:'SN', q:'산책길에 처음 보는 물건(비닐봉지, 조형물)이 보이면?', a:{t:'조심스럽게 냄새부터 꼼꼼히 확인한다', l:'S'}, am:'멀리서 보다가 천천히 다가간다', bm:'호기심에 이리저리 둘러보며 다가간다', b:{t:'일단 앞발로 툭 건드리거나 물어본다', l:'N'}},
+    {axis:'SN', q:'늘 쓰던 장난감과 새 장난감을 같이 주면?', a:{t:'결국 익숙한 장난감으로 돌아간다', l:'S'}, am:'둘 다 갖고 놀지만 익숙한 쪽을 더 좋아한다', bm:'둘 다 갖고 놀지만 새 쪽을 더 좋아한다', b:{t:'새 장난감에 푹 빠져 헌 것은 잊는다', l:'N'}},
+
+    {axis:'FT', q:'보호자가 시무룩하거나 슬퍼 보이면?', a:{t:'다가와 얼굴을 핥거나 곁을 지킨다', l:'F'}, am:'근처에 와서 조용히 눕는다', bm:'잠깐 쳐다보고 하던 일을 한다', b:{t:'평소처럼 자기 할 일을 한다', l:'T'}},
+    {axis:'FT', q:'혼내면 우리 강아지는?', a:{t:'한참 시무룩해서 눈치를 본다', l:'F'}, am:'잠시 시무룩했다가 금방 풀린다', bm:'무슨 일인지 모르는 듯 쳐다본다', b:{t:'금방 잊고 다시 신나게 논다', l:'T'}},
+    {axis:'FT', q:'다른 강아지가 혼나는 걸 보면?', a:{t:'같이 위축되거나 다가가 위로하듯 군다', l:'F'}, am:'조용히 지켜본다', bm:'잠깐 쳐다보고 만다', b:{t:'별 신경 쓰지 않고 자기 할 일을 한다', l:'T'}},
+    {axis:'FT', q:'보호자가 다른 강아지를 쓰다듬으면?', a:{t:'서운한 듯 끼어들거나 눈치를 본다', l:'F'}, am:'옆에 와서 자기도 만져 달라고 한다', bm:'잠깐 보다가 관심을 끈다', b:{t:'별 반응 없이 자기 볼일을 본다', l:'T'}},
+    {axis:'FT', q:'칭찬을 받으면?', a:{t:'몸을 비비고 뒹굴며 기쁨을 폭발시킨다', l:'F'}, am:'꼬리를 흔들며 보호자에게 다가온다', bm:'꼬리만 흔들고 간식이 나오는지 본다', b:{t:'간식이 나오는지부터 확인한다', l:'T'}},
+    {axis:'FT', q:'가족끼리 언성이 높아지면?', a:{t:'불안해하며 사이에 끼어들거나 숨는다', l:'F'}, am:'귀를 접고 눈치를 본다', bm:'잠깐 고개를 들었다가 다시 잔다', b:{t:'신경 쓰지 않고 하던 일을 한다', l:'T'}},
+    {axis:'FT', q:'원하는 게 있을 때 요구하는 방식은?', a:{t:'애처로운 눈빛과 낑낑 소리로 호소한다', l:'F'}, am:'옆에 붙어 앉아 조용히 기다린다', bm:'원하는 물건 앞에 가서 서 있는다', b:{t:'앞발로 툭툭 치거나 직접 행동으로 요구한다', l:'T'}},
+
+    {axis:'JP', q:'밥 시간이 다가오면?', a:{t:'시계라도 보는 듯 정확한 시간에 알린다', l:'J'}, am:'대략 그 시간쯤 되면 주변을 서성인다', bm:'생각날 때 가끔 조른다', b:{t:'배고플 때 아무 때나 조른다', l:'P'}},
+    {axis:'JP', q:'좋아하는 잠자리는?', a:{t:'늘 같은 자리만 고집한다', l:'J'}, am:'두세 곳을 정해놓고 번갈아 잔다', bm:'대체로 아무 데서나, 가끔 좋아하는 곳에서 잔다', b:{t:'그날그날 아무 데나 눕는다', l:'P'}},
+    {axis:'JP', q:'외출 준비(목줄, 하네스)를 시작하면?', a:{t:'정해진 순서대로 얌전히 기다린다', l:'J'}, am:'신나 하지만 기다리라고 하면 기다린다', bm:'들떠서 왔다 갔다 한다', b:{t:'신나서 이리저리 날뛰며 난리 난다', l:'P'}},
+    {axis:'JP', q:'산책 시간이 평소보다 늦어지면?', a:{t:'늘 나가던 시간에 현관에서 재촉한다', l:'J'}, am:'시간이 지나면 보호자 주변을 서성인다', bm:'늦어져도 크게 개의치 않는다', b:{t:'언제 나가든 나가기만 하면 좋아한다', l:'P'}},
+    {axis:'JP', q:'장난감 관리 스타일은?', a:{t:'자기만의 장소에 장난감을 모아둔다', l:'J'}, am:'좋아하는 몇 개만 정해진 곳에 둔다', bm:'대부분 흩어 두지만 몇 개는 챙긴다', b:{t:'온 집안 곳곳에 흩어 놓는다', l:'P'}},
+    {axis:'JP', q:'산책할 때 걷는 모습은?', a:{t:'일정한 속도로 늘 가던 코스를 걷는다', l:'J'}, am:'대체로 일정하지만 가끔 멈춰 냄새를 맡는다', bm:'자주 멈추고 방향을 바꾼다', b:{t:'냄새 따라 지그재그로 마음대로 걷는다', l:'P'}},
+    {axis:'JP', q:'밥을 먹는 방식은?', a:{t:'주자마자 한 번에 깔끔하게 비운다', l:'J'}, am:'몇 번 나눠 먹지만 결국 다 먹는다', bm:'그날 기분 따라 남기기도 한다', b:{t:'조금 먹다 놀다 다시 와서 먹는다', l:'P'}}
   ];
 
   /* interleave axes so the quiz alternates topics: EI, SN, FT, JP, EI, ... */
@@ -756,8 +792,34 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   var progressLabel = document.getElementById('progressLabel');
   var progressFill = document.getElementById('progressFill');
   var qText = document.getElementById('qText');
-  var optA = document.getElementById('optA');
-  var optB = document.getElementById('optB');
+  var mbtiOptsBox = document.getElementById('mbtiOpts');
+  var tieFirst = {};   /* 축 점수가 같을 때: 그 축에서 처음 고른 방향을 따름 */
+
+  /* 질문 1개 → 선택지 5개 (강하게 +2 / 조금 +1 / 조금 반대 +1 / 강하게 반대 +2 / 중립 0) */
+  var NEUTRAL_TEXT = '상황마다 달라요 · 잘 모르겠어요';
+  function mbtiOptions(q){
+    return [
+      {t:q.a.t, l:q.a.l, w:2},
+      {t:q.am, l:q.a.l, w:1},
+      {t:q.bm, l:q.b.l, w:1},
+      {t:q.b.t, l:q.b.l, w:2},
+      {t:NEUTRAL_TEXT, l:null, w:0, neutral:true}
+    ];
+  }
+  function axisPct(c, a, b){
+    var ca = c[a] || 0, cb = c[b] || 0;
+    if (ca + cb === 0) return 50;
+    return Math.round(ca / (ca + cb) * 100);
+  }
+  function pickLetter(c, a, b, axisKey){
+    if ((c[a]||0) > (c[b]||0)) return a;
+    if ((c[b]||0) > (c[a]||0)) return b;
+    return tieFirst[axisKey] || a;
+  }
+  function recomputeTie(log){
+    tieFirst = {};
+    log.forEach(function(h){ if (h.l && !tieFirst[h.axis]) tieFirst[h.axis] = h.l; });
+  }
 
   startQuizBtn.addEventListener('click', function(){
     dogName = (dogNameInput.value || '').trim() || '우리 강아지';
@@ -782,44 +844,52 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     progressFill.style.width = (((qIndex+1)/total)*100).toFixed(1) + '%';
     document.getElementById('qCat').textContent = AXIS_CAT[item.axis];
     qText.textContent = item.q;
-    optA.textContent = item.a.t;
-    optB.textContent = item.b.t;
+    mbtiOptsBox.innerHTML = '';
+    mbtiOptions(item).forEach(function(o){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt-btn' + (o.neutral ? ' opt-neutral' : '');
+      b.textContent = o.t;
+      b.addEventListener('click', function(){ pick(item.axis, o.l, o.w); });
+      mbtiOptsBox.appendChild(b);
+    });
     document.getElementById('prevQBtn').disabled = qIndex === 0;
   }
 
   document.getElementById('prevQBtn').addEventListener('click', function(){
     if (!history.length) return;
     var last = history.pop();
-    counts[last] -= 1;
+    if (last.l) counts[last.l] -= last.w;
     qIndex--;
     renderQuestion();
   });
 
-  function pick(letter){
-    counts[letter] = (counts[letter]||0) + 1;
-    history.push(letter);
+  function pick(axis, letter, weight){
+    if (letter) counts[letter] = (counts[letter]||0) + weight;
+    history.push({axis:axis, l:letter, w:weight});
     qIndex++;
     if (qIndex >= QUESTIONS.length){
+      recomputeTie(history);
+      sharedState.freeCounts = JSON.parse(JSON.stringify(counts));
+      sharedState.freeTie = JSON.parse(JSON.stringify(tieFirst));
       finishQuiz();
     } else {
       renderQuestion();
     }
   }
-  optA.addEventListener('click', function(){ pick(QUESTIONS[qIndex].a.l); });
-  optB.addEventListener('click', function(){ pick(QUESTIONS[qIndex].b.l); });
 
   function finishQuiz(){
     var code =
-      (counts.E > counts.I ? 'E' : 'I') +
-      (counts.S > counts.N ? 'S' : 'N') +
-      (counts.F > counts.T ? 'F' : 'T') +
-      (counts.J > counts.P ? 'J' : 'P');
+      pickLetter(counts,'E','I','EI') +
+      pickLetter(counts,'S','N','SN') +
+      pickLetter(counts,'F','T','FT') +
+      pickLetter(counts,'J','P','JP');
     var info = TYPES[code];
     sharedState.mbtiCode = code;
     sharedState.mbtiTitle = info.title;
 
     document.getElementById('resLetters').textContent = code;
-    document.getElementById('resName').textContent = dogName + '는 ' + info.title;
+    document.getElementById('resName').textContent = josa(dogName,'은','는') + ' ' + info.title;
     document.getElementById('resDesc').textContent = info.desc;
     document.getElementById('resMatch').textContent = info.match;
     document.getElementById('resSnack').textContent = info.snack;
@@ -838,9 +908,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     var axisRows = document.getElementById('axisRows');
     axisRows.innerHTML = '';
     AXES.forEach(function(ax){
-      var ca = counts[ax.a], cb = counts[ax.b];
-      var total = ca + cb;
-      var pctA = Math.round((ca/total)*100);
+      var pctA = axisPct(counts, ax.a, ax.b);
       var row = document.createElement('div');
       row.className = 'axis-row';
       row.innerHTML =
@@ -1055,7 +1123,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     sharedState.sajuDominant = r.dominantIdx;
     sharedState.sajuPct = r.pct[r.dominantIdx];
     sharedState.sajuDate = dateStr;
-    sharedState.ownerYear = (ownerYear && ownerYear > 1900 && ownerYear < 2100) ? ownerYear : null;
+    if (ownerYear && ownerYear > 1900 && ownerYear < 2100) sharedState.ownerYear = ownerYear;
 
     document.getElementById('sajuAnimalEmoji').textContent = BRANCH_EMOJI[r.branchIdx];
     document.getElementById('sajuHeadline').textContent = name + '의 사주';
@@ -1135,7 +1203,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   var EL_GEN = [1,2,3,4,0];   /* 목생화 화생토 토생금 금생수 수생목 */
 
   var comboArea = document.getElementById('comboArea');
-  var ownerSelects = ['ownerMbtiA','ownerMbtiB','ownerMbtiC'].map(function(id){ return document.getElementById(id); });
+  var ownerSelects = ['ownerMbtiC'].map(function(id){ return document.getElementById(id); });
   ownerSelects.forEach(function(sel){
     sel.innerHTML = '<option value="">선택 안 함</option>' + MBTI_LIST.map(function(m){ return '<option value="' + m + '">' + m + '</option>'; }).join('');
     sel.addEventListener('change', function(){ setOwnerMbti(sel.value); });
@@ -1219,10 +1287,10 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   function renderCombo(){
     var hasDog = !!sharedState.mbtiCode;
     var hasSaju = sharedState.sajuDominant != null;
-    /* 올인원 탭에서는 통합 결과 바로 아래, 다른 탭에서는 개사주 섹션 아래에 배치 */
-    var anchor = currentTab === 'premium' ? document.getElementById('aioResult') : sajuSection;
+    /* 보호자 케미·결제는 '우리 사이 리포트' 탭에서, 분석을 마친 뒤에만 보여줌 */
+    var anchor = document.getElementById('aioResult');
     if (anchor && anchor.nextSibling !== comboArea) anchor.parentNode.insertBefore(comboArea, anchor.nextSibling);
-    if ((!hasDog && !hasSaju) || (currentTab === 'premium' && !sharedState.allInOneDone)){ comboArea.hidden = true; return; }
+    if (currentTab !== 'premium' || !sharedState.allInOneDone || (!hasDog && !hasSaju)){ comboArea.hidden = true; return; }
     comboArea.hidden = false;
 
     var name = sharedState.dogName || '우리 아이';
@@ -1264,7 +1332,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     paywall.hidden = !chemi;
     if (!chemi) return;
 
-    document.getElementById('paywallTitle').textContent = chemi.owner + ' 보호자 × ' + chemi.dog + ' ' + name + ' 관계 보완 가이드';
+    document.getElementById('paywallTitle').textContent = chemi.owner + ' 보호자 × ' + chemi.dog + ' ' + name + ', 우리 사이 심층 리포트';
     document.getElementById('priceText').textContent = won(CONFIG.PRICE);
     document.getElementById('priceNote').textContent = '10페이지 PDF 리포트' + (CONFIG.FACE_ART_READY ? ' + AI 관상 일러스트 4컷' : '');
     document.getElementById('payBtn').textContent = won(CONFIG.PRICE) + ' 결제하고 리포트 받기';
@@ -1416,41 +1484,68 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   }
 
   /* =====================================================
-     ALL-IN-ONE (AI 프리미엄 탭)
+     우리 사이 리포트 (프리미엄 탭, 구 AI 프리미엄)
      반려견 정보 → 보호자 정보 → (보호자 간이 4문항) → 성격 28문항 → 관계·생활·보호자 15문항
      → 멍BTI·개사주·케미·생활 처방 통합 결과
   ===================================================== */
   var OWNER_MINI = [
-    {axis:'EI', q:'[보호자] 주말에 나는 주로 어떻게 충전하나요?', opts:[{t:'사람들을 만나며 에너지를 얻는다', v:'E'},{t:'혼자 조용히 쉬며 에너지를 채운다', v:'I'}]},
-    {axis:'SN', q:'[보호자] 산책 코스를 고를 때 나는?', opts:[{t:'익숙하고 검증된 길이 편하다', v:'S'},{t:'안 가본 새 길이 궁금하다', v:'N'}]},
-    {axis:'FT', q:'[보호자] 아이가 말썽을 피웠을 때 먼저 드는 생각은?', opts:[{t:'속상하고 서운한 마음이 먼저 든다', v:'F'},{t:'왜 그랬는지 원인부터 궁금하다', v:'T'}]},
-    {axis:'JP', q:'[보호자] 아이와 여행을 간다면 나는?', opts:[{t:'숙소·코스를 미리 다 정해둔다', v:'J'},{t:'큰 틀만 정하고 가서 정한다', v:'P'}]}
+    {axis:'EI', q:'[보호자] 주말에 나는 주로 어떻게 충전하나요?', opts:[
+      {t:'사람들을 만나야 에너지가 채워진다', v:'E'},
+      {t:'굳이 고르자면 밖에서 사람 만나는 쪽', v:'E'},
+      {t:'굳이 고르자면 집에서 쉬는 쪽', v:'I'},
+      {t:'혼자 조용히 쉬어야 에너지가 채워진다', v:'I'}]},
+    {axis:'SN', q:'[보호자] 산책 코스를 고를 때 나는?', opts:[
+      {t:'익숙하고 검증된 길이 제일 편하다', v:'S'},
+      {t:'대체로 익숙한 길, 가끔 새 길', v:'S'},
+      {t:'대체로 새 길, 가끔 익숙한 길', v:'N'},
+      {t:'안 가본 새 길이 늘 궁금하다', v:'N'}]},
+    {axis:'FT', q:'[보호자] 아이가 말썽을 피웠을 때 먼저 드는 생각은?', opts:[
+      {t:'속상하고 서운한 마음이 먼저 든다', v:'F'},
+      {t:'속상하지만 이유도 궁금하다', v:'F'},
+      {t:'이유가 궁금하지만 마음도 쓰인다', v:'T'},
+      {t:'왜 그랬는지 원인부터 따져본다', v:'T'}]},
+    {axis:'JP', q:'[보호자] 아이와 여행을 간다면 나는?', opts:[
+      {t:'숙소·코스·시간까지 미리 다 정해둔다', v:'J'},
+      {t:'숙소와 큰 일정만 정해둔다', v:'J'},
+      {t:'숙소만 정하고 나머지는 가서 정한다', v:'P'},
+      {t:'일단 떠나고 가서 다 정한다', v:'P'}]}
   ];
   var PROFILE_QS = [
     {sec:'보호자와의 관계', key:'b1', q:'보호자가 외출 준비를 하면 {name}는?', opts:[
       {t:'현관까지 따라와 낑낑대거나 짖는다', v:'sepHigh', s:'따라옴'},
+      {t:'눈치채고 미리 시무룩해지거나 숨는다', v:'sepHigh', s:'시무룩'},
       {t:'잠깐 쳐다보다가 자기 자리로 간다', v:'sepMid', s:'지켜봄'},
+      {t:'그날그날 반응이 다르다', v:'sepMid', s:'그때그때'},
       {t:'신경 쓰지 않고 하던 일을 한다', v:'sepLow', s:'무관심'}]},
     {sec:'보호자와의 관계', key:'b2', q:'{name}가 가장 좋아하는 스킨십은?', opts:[
       {t:'품에 폭 안기기', v:'hug', s:'안기기'},
       {t:'벌러덩 누워 배 쓰다듬기', v:'belly', s:'배 쓰다듬기'},
+      {t:'귀·얼굴·턱 밑 만져주기', v:'face', s:'얼굴 쓰다듬기'},
       {t:'그냥 옆에 몸 붙이고 있기', v:'near', s:'붙어있기'},
-      {t:'스킨십은 짧게, 금방 자리를 뜬다', v:'short', s:'짧은 스킨십'}]},
+      {t:'스킨십은 짧게, 금방 자리를 뜬다', v:'short', s:'짧은 스킨십'},
+      {t:'만지는 걸 별로 좋아하지 않는다', v:'none', s:'스킨십 싫어함'}]},
     {sec:'보호자와의 관계', key:'b3', q:'{name}가 보호자에게 뭔가 원할 때는?', opts:[
       {t:'짖어서 확실하게 알린다', v:'bark', s:'짖기'},
+      {t:'낑낑대거나 하울링한다', v:'whine', s:'낑낑'},
       {t:'앞발로 툭툭 친다', v:'paw', s:'앞발'},
       {t:'말없이 빤히 쳐다본다', v:'stare', s:'눈빛'},
-      {t:'장난감을 물어 온다', v:'toy', s:'장난감'}]},
+      {t:'장난감을 물어 온다', v:'toy', s:'장난감'},
+      {t:'딱히 요구하지 않고 기다린다', v:'wait', s:'기다림'}]},
     {sec:'보호자와의 관계', key:'b4', q:'집에서 {name}가 주로 머무는 자리는?', opts:[
+      {t:'보호자 무릎이나 몸 위', v:'lap', s:'무릎 위'},
       {t:'보호자 바로 옆, 몸이 닿는 곳', v:'next', s:'바로 옆'},
       {t:'보호자가 보이는 적당한 거리', v:'see', s:'보이는 곳'},
+      {t:'그날그날 다르다', v:'varies', s:'그때그때'},
       {t:'자기 집이나 방석', v:'own', s:'자기 자리'}]},
     {sec:'보호자와의 관계', key:'b5', q:'보호자가 바빠서 못 놀아주면?', opts:[
       {t:'놀아줄 때까지 계속 조른다', v:'nag', s:'조름'},
+      {t:'말썽(물건 물어뜯기 등)을 피운다', v:'mischief', s:'말썽'},
+      {t:'옆에 와서 조용히 기다린다', v:'wait', s:'기다림'},
       {t:'혼자 장난감을 갖고 논다', v:'self', s:'혼자 놂'},
       {t:'포기하고 잠을 잔다', v:'sleep', s:'잠'}]},
 
     {sec:'일상·산책·놀이', key:'d1', q:'{name}의 하루 산책은 보통?', opts:[
+      {t:'산책을 무서워하거나 싫어해서 거의 못 한다', v:'walkfear', s:'산책 거부'},
       {t:'하루 1회가 안 될 때가 많다', v:'walk0', s:'1회 미만'},
       {t:'하루 1회', v:'walk1', s:'1회'},
       {t:'하루 2회 이상', v:'walk2', s:'2회 이상'}]},
@@ -1458,44 +1553,62 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       {t:'구석구석 냄새 맡기', v:'sniff', s:'냄새'},
       {t:'신나게 달리기', v:'run', s:'달리기'},
       {t:'다른 강아지·사람 만나기', v:'friends', s:'친구'},
-      {t:'보호자 옆에서 천천히 걷기', v:'stroll', s:'천천히'}]},
+      {t:'보호자 옆에서 천천히 걷기', v:'stroll', s:'천천히'},
+      {t:'주변을 살피며 경계하듯 걷는다', v:'alert', s:'경계'},
+      {t:'이것저것 주워 먹으려 한다', v:'scavenge', s:'주워먹기'}]},
     {sec:'일상·산책·놀이', key:'d3', q:'{name}의 식사 스타일은?', opts:[
       {t:'주자마자 허겁지겁 먹는다', v:'fast', s:'허겁지겁'},
       {t:'적당한 속도로 잘 먹는다', v:'slow', s:'보통'},
-      {t:'입이 짧아 남기거나 깨작거린다', v:'picky', s:'입짧음'}]},
+      {t:'입이 짧아 남기거나 깨작거린다', v:'picky', s:'입짧음'},
+      {t:'사료보다 간식·사람 음식만 찾는다', v:'beg', s:'간식 선호'}]},
     {sec:'일상·산책·놀이', key:'d4', q:'{name}가 가장 좋아하는 놀이는?', opts:[
       {t:'공 던지기·터그 놀이', v:'ball', s:'공·터그'},
       {t:'노즈워크·간식 찾기', v:'nose', s:'노즈워크'},
       {t:'보호자와 몸으로 장난치기', v:'people', s:'몸장난'},
-      {t:'혼자 인형·장난감 갖고 놀기', v:'solo', s:'혼자 놀이'}]},
+      {t:'혼자 인형·장난감 갖고 놀기', v:'solo', s:'혼자 놀이'},
+      {t:'씹고 뜯는 걸 제일 좋아한다', v:'chew', s:'씹기'},
+      {t:'놀이에 별로 관심이 없다', v:'lowplay', s:'놀이 무관심'}]},
     {sec:'일상·산책·놀이', key:'d5', q:'{name}가 유독 예민하게 반응하는 건?', opts:[
-      {t:'초인종·청소기 같은 소리', v:'sound', s:'소리'},
+      {t:'초인종·청소기 같은 집 안 소리', v:'sound', s:'소리'},
+      {t:'차·오토바이 같은 산책길 소음', v:'traffic', s:'차량 소음'},
       {t:'낯선 사람', v:'stranger', s:'낯선 사람'},
       {t:'다른 강아지', v:'dogs', s:'다른 강아지'},
+      {t:'발·귀 만지기, 발톱 깎기 같은 손길', v:'touch', s:'손길'},
+      {t:'여러 가지에 두루 예민하다', v:'many', s:'여러 자극'},
       {t:'특별히 없다', v:'none', s:'없음'}]},
 
     {sec:'보호자 스타일', key:'o1', q:'[보호자] 하루에 {name}와 온전히 함께하는 시간은?', opts:[
       {t:'1시간 미만', v:'t1', s:'1시간 미만'},
       {t:'1~3시간', v:'t2', s:'1~3시간'},
-      {t:'3시간 이상', v:'t3', s:'3시간 이상'}]},
+      {t:'3시간 이상', v:'t3', s:'3시간 이상'},
+      {t:'날마다 크게 다르다', v:'tvar', s:'들쭉날쭉'}]},
     {sec:'보호자 스타일', key:'o2', q:'[보호자] 나의 교육 스타일에 가까운 것은?', opts:[
       {t:'간식 보상 위주', v:'treat', s:'간식 보상'},
       {t:'말과 칭찬 위주', v:'praise', s:'칭찬 위주'},
-      {t:'아직 교육은 거의 안 한다', v:'none', s:'거의 안 함'},
-      {t:'단호하고 엄격한 편', v:'strict', s:'엄격'}]},
+      {t:'간식과 칭찬을 섞어서', v:'mix', s:'간식+칭찬'},
+      {t:'단호하고 엄격한 편', v:'strict', s:'엄격'},
+      {t:'훈련사·전문가 도움을 받고 있다', v:'pro', s:'전문가'},
+      {t:'아직 교육은 거의 안 한다', v:'none', s:'거의 안 함'}]},
     {sec:'보호자 스타일', key:'o3', q:'[보호자] 요즘 나의 생활 리듬은?', opts:[
       {t:'출퇴근·식사 시간이 규칙적이다', v:'regular', s:'규칙적'},
+      {t:'재택근무 등으로 거의 집에 있다', v:'home', s:'재택'},
       {t:'그때그때 조금씩 다르다', v:'flex', s:'유동적'},
       {t:'바빠서 많이 불규칙하다', v:'busy', s:'불규칙'}]},
     {sec:'보호자 스타일', key:'o4', q:'[보호자] 요즘 {name}와 관련해 가장 큰 고민은?', opts:[
       {t:'혼자 있을 때 불안해한다(분리불안)', v:'sep', s:'분리불안'},
       {t:'짖음', v:'bark', s:'짖음'},
       {t:'산책 매너(줄 당김 등)', v:'walk', s:'산책매너'},
+      {t:'스킨십·만지는 걸 싫어한다', v:'touch', s:'스킨십 거부'},
+      {t:'다른 강아지와 잘 못 어울린다', v:'social', s:'사회성'},
+      {t:'배변 실수', v:'potty', s:'배변'},
       {t:'편식·식습관', v:'food', s:'식습관'},
+      {t:'건강·노화가 걱정된다', v:'health', s:'건강·노화'},
       {t:'특별한 고민은 없다', v:'none', s:'없음'}]},
     {sec:'보호자 스타일', key:'o5', q:'[보호자] {name}가 앞으로 이렇게 되면 좋겠다!', opts:[
       {t:'더 활발하고 자신감 있게', v:'active', s:'활발하게'},
       {t:'더 차분하고 안정적으로', v:'calm', s:'차분하게'},
+      {t:'사람·강아지와 더 잘 어울리게', v:'social', s:'잘 어울리게'},
+      {t:'혼자서도 편안하게', v:'alone', s:'혼자서도 편안하게'},
       {t:'지금 모습 그대로', v:'same', s:'그대로'}]}
   ];
 
@@ -1506,7 +1619,9 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     return o ? o.s : '-';
   }
   function attachType(pr){
-    var sc = ({sepHigh:2, sepMid:1, sepLow:0})[pr.b1] + ({next:2, see:1, own:0})[pr.b4] + ({nag:2, sleep:1, self:0})[pr.b5];
+    var sc = (({sepHigh:2, sepMid:1, sepLow:0})[pr.b1] || 0) +
+             (({lap:2, next:2, see:1, varies:1, own:0})[pr.b4] || 0) +
+             (({nag:2, mischief:2, wait:1, sleep:1, self:0})[pr.b5] || 0);
     if (sc >= 4) return {key:'close', label:'밀착형'};
     if (sc >= 2) return {key:'balance', label:'균형형'};
     return {key:'indep', label:'독립형'};
@@ -1529,8 +1644,11 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     if (at.key === 'indep' && pr.o1 === 't3') t1 += ' 함께하는 시간이 긴 편이라, 아이만의 휴식 공간을 꼭 지켜주세요.';
     out.push({title:'💞 애착 스타일 · ' + at.label, text:t1});
 
-    var b2 = {hug:'품에 안기는 걸 좋아하는 스킨십파', belly:'배를 내어주는 신뢰 표현파', near:'붙어 있기만 해도 행복한 동행파', short:'짧고 굵은 스킨십을 선호하는 쿨한 타입'}[pr.b2];
+    var b2 = {hug:'품에 안기는 걸 좋아하는 스킨십파', belly:'배를 내어주는 신뢰 표현파', face:'귀와 얼굴 쓰다듬기를 좋아하는 섬세한 교감파', near:'붙어 있기만 해도 행복한 동행파', short:'짧고 굵은 스킨십을 선호하는 쿨한 타입', none:'손길보다 같은 공간에 함께 있는 것으로 마음을 나누는 타입'}[pr.b2];
+    if (pr.b2 === 'none') b2 += '(갑자기 만지는 걸 싫어하게 됐다면 통증일 수 있으니 진료를 먼저 받아보세요)';
     var b3 = {
+      whine:'낑낑대는 소리로 마음을 전하는 편이라, 조용해진 순간에 다가가 반응해주면 차분하게 요구하는 법을 배워요.',
+      wait:'요구를 잘 하지 않는 편이라 꼬리·귀 방향 같은 작은 신호를 보호자가 먼저 읽어주는 게 중요해요.',
       bark:'원하는 걸 짖어서 알리는 편이라, 짖을 때보다 조용히 기다릴 때 보상해주면 대화 방식이 부드러워져요.',
       paw:'앞발로 툭툭 부르는 건 신뢰의 신호예요. "기다려" 같은 짧은 신호로 대화를 이어가 보세요.',
       stare:'빤히 쳐다보는 건 조용한 대화 신청이에요. 눈을 맞추고 이름을 불러주는 것만으로도 충분히 통해요.',
@@ -1542,11 +1660,14 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       sniff:'냄새 맡기를 좋아하니 거리보다 "킁킁 시간"이 중요해요. 산책 중 10분쯤은 자유롭게 냄새 맡게 해주세요.',
       run:'달리기를 좋아하니 안전한 공간에서 마음껏 뛸 기회를 만들어주세요.',
       friends:'친구를 좋아하니 성향이 맞는 친구와의 짧은 만남이 최고의 보상이에요.',
-      stroll:'천천히 걷는 걸 좋아하니 속도보다 꾸준함이 중요해요.'
+      stroll:'천천히 걷는 걸 좋아하니 속도보다 꾸준함이 중요해요.',
+      alert:'산책 중 주변을 살피는 편이니 조용한 시간대·한적한 코스로 안정감부터 만들어주세요.',
+      scavenge:'주워 먹는 습관이 있으니 "놔"·"기다려" 같은 신호와 간식 교환 놀이를 연습해 주세요. 위험한 걸 삼켰다면 바로 동물병원에 연락하세요.'
     }[pr.d2];
+    if (pr.d1 === 'walkfear') walk += ' 산책을 무서워한다면 집 앞 5분, 안고 나가 바깥 냄새만 맡기기처럼 아주 작은 단계부터 시작해보세요.';
     if (pr.d1 === 'walk0') walk += ' 지금은 산책이 하루 1회 미만이라, 짧게라도 매일 나가는 것부터 시작해보세요.';
     if (pr.d1 === 'walk2') walk += ' 하루 2회 이상 나가는 지금 루틴이 아주 좋아요.';
-    walk += ' ' + {ball:'집에서는 공·터그 놀이로 에너지를 발산시켜 주세요.', nose:'집에서는 노즈워크로 머리를 쓰게 해주면 만족도가 높아요.', people:'보호자와 몸으로 하는 장난이 최고의 교감 시간이에요.', solo:'혼자 노는 장난감을 몇 개 돌려가며 바꿔주면 지루함을 줄일 수 있어요.'}[pr.d4];
+    walk += ' ' + {ball:'집에서는 공·터그 놀이로 에너지를 발산시켜 주세요.', nose:'집에서는 노즈워크로 머리를 쓰게 해주면 만족도가 높아요.', people:'보호자와 몸으로 하는 장난이 최고의 교감 시간이에요.', solo:'혼자 노는 장난감을 몇 개 돌려가며 바꿔주면 지루함을 줄일 수 있어요.', chew:'씹는 걸 좋아하니 크기에 맞는 안전한 씹기 장난감을 충분히 마련해 주세요.', lowplay:'놀이에 관심이 적다면 짧은 냄새 찾기처럼 부담 없는 놀이를 1~2분씩 시도해보세요.'}[pr.d4];
     if (dogCode[0] === 'I' && pr.d2 === 'friends') walk += ' 다만 내향형인 만큼 만남은 짧고 소규모로 해주세요.';
     out.push({title:'🦮 산책·놀이 처방', text:walk});
 
@@ -1554,8 +1675,12 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       sound:'초인종·청소기 같은 소리에 예민해요. 소리가 날 때 간식을 주며 "좋은 일이 생기는 소리"로 바꿔주는 연습이 도움이 될 수 있어요.',
       stranger:'낯선 사람에게 예민해요. 손님이 먼저 다가가지 않게 하고, 아이가 스스로 다가갈 때까지 기다려 주세요.',
       dogs:'다른 강아지에게 예민해요. 산책할 때 거리를 넉넉히 두고, 차분하게 지나가면 보상해주세요.',
+      traffic:'산책길 차량 소음에 예민해요. 조용한 코스부터 시작해, 소음과 거리를 둔 채 차분하면 보상해 주세요.',
+      touch:'발·귀를 만지는 손길에 예민해요. 아주 짧게 만지고 바로 보상하는 연습을 조금씩 늘려보세요.',
+      many:'여러 자극에 두루 예민한 편이라 새로운 자극은 하나씩, 짧게 보여주세요. 일상에 지장이 클 정도라면 행동 전문가와 상담해 보세요.',
       none:'특별히 예민한 자극이 없는 편이라, 새로운 경험을 넓혀가기 좋아요.'
     }[pr.d5];
+    if (pr.d3 === 'beg') sens += ' 사람 음식을 찾는 편이라면 식탁 대신 정해진 자리에서 기다릴 때 보상하는 연습이 도움이 될 수 있어요.';
     if (pr.d3 === 'picky') sens += ' 입이 짧은 편이니 식사 시간을 정해두고 일정 시간이 지나면 치우는 루틴을 시도해볼 만해요.';
     if (pr.d3 === 'fast') sens += ' 허겁지겁 먹는 편이라 천천히 먹게 돕는 식기를 고려해볼 만해요.';
     out.push({title:'⚠️ 예민 포인트 케어', text:sens});
@@ -1564,9 +1689,12 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     if (pr.o2 === 'strict') style = '단호한 교육은 아이를 위축시킬 수 있어요. 잘했을 때 보상하는 긍정 강화로 조금씩 바꿔보면 관계가 한결 부드러워질 수 있어요.';
     else if (pr.o2 === 'treat') style = '간식 보상은 대부분의 아이에게 잘 통해요. ' + (dogCode[2] === 'T' ? '목표가 분명한 ' + josa(name,'이','') + '에게 특히 효과적이에요.' : '감성파 ' + josa(name,'이','') + '에겐 간식과 함께 다정한 칭찬을 꼭 곁들여 주세요.');
     else if (pr.o2 === 'praise') style = dogCode[2] === 'F' ? '감정 교감형인 ' + josa(name,'이','') + '에게 칭찬 위주의 교육은 아주 잘 맞아요.' : josa(name,'은','는') + ' 말보다 확실한 보상에 더 반응할 수 있어요. 칭찬에 작은 간식을 더해보세요.';
+    else if (pr.o2 === 'mix') style = '간식과 칭찬을 함께 쓰는 지금 방식은 대부분의 아이에게 잘 맞는 균형 잡힌 방법이에요. ' + (dogCode[2] === 'F' ? '감성파 ' + josa(name,'이','') + '에겐 칭찬의 비중을 조금 더 높여보세요.' : '목표형 ' + josa(name,'이','') + '에겐 간식 타이밍을 정확히 맞추는 게 포인트예요.');
+    else if (pr.o2 === 'pro') style = '전문가와 함께하고 있다면, 이 결과의 성향 정보를 훈련사와 나눠 보세요. 집에서도 같은 신호와 보상을 일관되게 쓰는 게 가장 중요해요.';
     else style = '하루 5분, "앉아·기다려" 같은 짧은 교육부터 시작하면 서로의 신호를 읽기가 훨씬 쉬워져요.';
     var dogJ = dogCode[3] === 'J';
-    if (pr.o3 === 'regular') style += dogJ ? ' 규칙적인 보호자와 계획형 ' + josa(name,'이','') + '는 루틴 궁합이 좋아요.' : ' 보호자의 규칙적인 리듬이 자유로운 ' + josa(name,'이','') + '에게 안정감을 줘요.';
+    if (pr.o3 === 'home') style += ' 함께 있는 시간이 긴 만큼, 혼자 있는 연습도 짧게 꾸준히 해주세요. 보호자가 갑자기 바빠질 때 큰 도움이 돼요.';
+    else if (pr.o3 === 'regular') style += dogJ ? ' 규칙적인 보호자와 계획형 ' + josa(name,'이','') + '는 루틴 궁합이 좋아요.' : ' 보호자의 규칙적인 리듬이 자유로운 ' + josa(name,'이','') + '에게 안정감을 줘요.';
     else if (dogJ) style += ' 루틴을 좋아하는 ' + josa(name,'이','') + '에게 들쭉날쭉한 일정은 스트레스가 될 수 있어요. 밥·산책 시간만큼은 고정해 주세요.';
     else style += ' 즉흥형 ' + josa(name,'이','') + '는 일정이 조금 달라져도 괜찮지만, 하루 한 번 함께하는 시간은 꼭 지켜주세요.';
     out.push({title:'👤 보호자 ' + ownerCode + ' 스타일 × ' + name, text:style});
@@ -1576,9 +1704,13 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       bark:'짖음이 고민이라면 무엇에 짖는지(소리·사람·요구) 며칠간 기록해 보세요. 원인에 따라 해법이 달라져요.',
       walk:'산책 매너가 고민이라면 줄이 느슨할 때만 앞으로 가는 연습을 짧고 자주 해보세요.',
       food:'식습관이 고민이라면 간식 양부터 점검해 보세요. 갑작스러운 식욕 변화가 있다면 수의사 상담이 먼저예요.',
+      touch:'스킨십 거부가 고민이라면 아이가 먼저 다가올 때만 짧게 쓰다듬고 멈추는 연습부터 해보세요. 갑자기 생긴 거부라면 통증 가능성이 있으니 진료를 먼저 받아보세요.',
+      social:'다른 강아지와의 관계가 고민이라면 차분한 친구 한 마리와 넓은 공간에서 나란히 걷기부터 시작해 보세요. 억지 인사는 오히려 역효과가 날 수 있어요.',
+      potty:'배변 실수가 고민이라면 성공했을 때 바로 보상하고, 실수는 조용히 치우는 게 기본이에요. 갑자기 실수가 늘었다면 비뇨기 문제일 수 있으니 수의사와 상담해 주세요.',
+      health:'건강·노화가 걱정된다면 무엇보다 정기 검진이 먼저예요. 이 결과는 진단이 아니니, 걱정되는 변화는 꼭 수의사와 상의해 주세요. 일상에선 무리 없는 산책과 교감 시간을 꾸준히 지켜주세요.',
       none:'특별한 고민이 없다니 멋진 파트너십이에요!'
     }[pr.o4];
-    worry += ' ' + {active:'더 활발해지길 바라신다면 새로운 놀이를 하나씩 천천히 소개해보세요.', calm:'더 차분해지길 바라신다면 "매트에서 쉬기" 같은 휴식 연습이 도움이 될 수 있어요.', same:'지금 그대로의 ' + josa(name,'이','') + '를 아껴주는 마음이 가장 큰 선물이에요.'}[pr.o5];
+    worry += ' ' + {active:'더 활발해지길 바라신다면 새로운 놀이를 하나씩 천천히 소개해보세요.', calm:'더 차분해지길 바라신다면 "매트에서 쉬기" 같은 휴식 연습이 도움이 될 수 있어요.', social:'더 잘 어울리길 바라신다면 짧고 좋은 만남을 자주 쌓는 게 길고 힘든 만남 한 번보다 나아요.', alone:'혼자서도 편안하길 바라신다면 노즈워크 장난감을 주고 잠깐 자리를 비우는 연습부터 시작해 보세요.', same:'지금 그대로의 ' + josa(name,'이','') + '를 아껴주는 마음이 가장 큰 선물이에요.'}[pr.o5];
     out.push({title:'🎯 지금 고민을 위한 첫걸음', text:worry});
     return out;
   }
@@ -1617,8 +1749,24 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     if (sharedState.sajuDate && !document.getElementById('aioDate').value) document.getElementById('aioDate').value = sharedState.sajuDate;
     if (sharedState.ownerMbti) aioOwnerSel.value = sharedState.ownerMbti;
     if (sharedState.ownerYear && !document.getElementById('aioOwnerYear').value) document.getElementById('aioOwnerYear').value = sharedState.ownerYear;
+    var canReuse = !!(sharedState.freeCounts && sharedState.mbtiCode);
+    document.getElementById('aioReuseRow').hidden = !canReuse;
+    if (canReuse) document.getElementById('aioReuseCode').textContent = sharedState.mbtiCode;
     aio.items = []; aio.answers = []; aio.qi = 0;
     aioShowForm(0);
+  });
+
+  /* 무료 결과 끝의 '우리 사이 리포트' 안내 버튼 */
+  Array.prototype.forEach.call(document.querySelectorAll('.upsell-btn'), function(btn){
+    btn.addEventListener('click', function(){
+      showTab('premium');
+      if (sharedState.allInOneDone){
+        aioIntro.hidden = true; aioForm.hidden = true; aioQuiz.hidden = true; aioResultEl.hidden = false;
+      } else {
+        aioResultEl.hidden = true; aioForm.hidden = true; aioQuiz.hidden = true; aioIntro.hidden = false;
+      }
+      window.scrollTo(0, 0);
+    });
   });
 
   document.getElementById('aioFormBack').addEventListener('click', function(){
@@ -1644,6 +1792,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     if (y && (y < 1920 || y > 2026)){ err.textContent = '보호자 태어난 해를 다시 확인해 주세요.'; err.hidden = false; return; }
     aio.data.owner = aioOwnerSel.value;
     aio.data.ownerYear = y;
+    aio.data.reuse = !!(sharedState.freeCounts && document.getElementById('aioReuse').checked);
     aio.items = buildAioItems();
     aio.answers = []; aio.qi = 0;
     aioForm.hidden = true; aioQuiz.hidden = false;
@@ -1655,9 +1804,11 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     if (aio.data.owner === '?'){
       OWNER_MINI.forEach(function(o){ items.push({kind:'owner', sec:'보호자 성향(간이)', axis:o.axis, q:o.q, opts:o.opts}); });
     }
-    QUESTIONS.forEach(function(q){
-      items.push({kind:'mbti', sec:'반려견 성격 · ' + AXIS_CAT[q.axis], q:q.q, opts:[{t:q.a.t, v:q.a.l},{t:q.b.t, v:q.b.l}]});
-    });
+    if (!aio.data.reuse){
+      QUESTIONS.forEach(function(q){
+        items.push({kind:'mbti', sec:'반려견 성격 · ' + AXIS_CAT[q.axis], axis:q.axis, q:q.q, opts:mbtiOptions(q)});
+      });
+    }
     PROFILE_QS.forEach(function(p){ items.push({kind:'profile', sec:p.sec, key:p.key, q:p.q, opts:p.opts}); });
     return items;
   }
@@ -1672,10 +1823,10 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     box.innerHTML = '';
     it.opts.forEach(function(o){
       var b = document.createElement('button');
-      b.className = 'opt-btn'; b.type = 'button'; b.textContent = o.t;
-      if (aio.answers[aio.qi] === o.v) b.style.borderColor = 'var(--accent-2)';
+      b.className = 'opt-btn' + (o.neutral ? ' opt-neutral' : ''); b.type = 'button'; b.textContent = o.t;
+      if (aio.answers[aio.qi] === o) b.style.borderColor = 'var(--accent-2)';
       b.addEventListener('click', function(){
-        aio.answers[aio.qi] = o.v;
+        aio.answers[aio.qi] = o;
         aio.qi++;
         if (aio.qi >= aio.items.length) finishAio(); else renderAioQ();
       });
@@ -1689,13 +1840,22 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
   });
 
   function finishAio(){
-    var c = {E:0,I:0,S:0,N:0,F:0,T:0,J:0,P:0}, oc = {}, prof = {};
+    var c = {E:0,I:0,S:0,N:0,F:0,T:0,J:0,P:0}, oc = {}, prof = {}, log = [];
     aio.items.forEach(function(it, i){
-      var v = aio.answers[i];
-      if (it.kind === 'mbti') c[v]++;
-      else if (it.kind === 'owner') oc[it.axis] = v;
-      else prof[it.key] = v;
+      var o = aio.answers[i];
+      if (it.kind === 'mbti'){
+        if (o.l) c[o.l] += o.w;
+        log.push({axis:it.axis, l:o.l, w:o.w});
+      }
+      else if (it.kind === 'owner') oc[it.axis] = o.v;
+      else prof[it.key] = o.v;
     });
+    if (aio.data.reuse){
+      c = JSON.parse(JSON.stringify(sharedState.freeCounts));
+      tieFirst = JSON.parse(JSON.stringify(sharedState.freeTie || {}));
+    } else {
+      recomputeTie(log);
+    }
     var ownerCode = aio.data.owner !== '?' ? aio.data.owner : (oc.EI + oc.SN + oc.FT + oc.JP);
     var name = aio.data.name;
 
@@ -1714,6 +1874,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     document.getElementById('sajuBreedInput').value = aio.data.breed || '';
     document.getElementById('sajuOwnerYearInput').value = aio.data.ownerYear || '';
     sajuSubmitBtn.click();
+    document.getElementById('sajuOwnerYearInput').value = '';   /* 무료 개사주에는 보호자 정보를 남기지 않음 */
     sharedState.dogName = name;
 
     sharedState.allInOneDone = true;
@@ -1734,7 +1895,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     var info = TYPES[code];
     var r = computeSaju(name, aio.data.date, aio.data.breed, aio.data.ownerYear);
 
-    document.getElementById('aioResTitle').textContent = name + ' × 보호자 올인원 분석';
+    document.getElementById('aioResTitle').textContent = '너와 나, ' + josa(name,'과','와') + ' 보호자의 우리 사이 리포트';
     var head = document.getElementById('aioResHead');
     head.innerHTML = '';
     head.appendChild(document.createTextNode('보호자 '));
@@ -1759,7 +1920,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     info.traits.forEach(function(t){ chips.appendChild(el('span', 'chip', t)); });
     A.appendChild(chips);
     AXES.forEach(function(ax){
-      var ca = counts[ax.a], cb = counts[ax.b], pctA = Math.round(ca / (ca + cb) * 100);
+      var pctA = axisPct(counts, ax.a, ax.b);
       var row = el('div', 'axis-row');
       var lab = el('div', 'axis-labels');
       lab.appendChild(el('span', null, ax.aLabel + ' ' + pctA + '%'));
@@ -1870,7 +2031,7 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
       premiumSampleFn = await claude.use('sample');
     }catch(e){ premiumSampleFn = null; }
     if (!premiumSampleFn){
-      premiumUnavailableMsg.textContent = 'AI 프리미엄은 현재 테스트 중인 기능이라 이 화면에서는 아직 사용할 수 없어요. 곧 만나보실 수 있도록 준비하고 있어요! 멍BTI와 개사주 탭은 지금 바로 이용하실 수 있어요.';
+      premiumUnavailableMsg.textContent = '사진 관상 분석은 지금 테스트 중인 기능이라 이 화면에서는 아직 사용할 수 없어요. 곧 만나보실 수 있도록 준비하고 있어요!';
       premiumUnavailableMsg.hidden = false;
       premiumSubmitBtn.disabled = true;
       return;
@@ -2003,6 +2164,18 @@ select.aio-select{width:100%; padding:13px 14px; border-radius:13px; border:1.5p
     premiumForm.hidden = false;
   });
 
+})();
+</script>
+
+<!-- PWA: 서비스 워커 등록 (https 또는 localhost에서만) -->
+<script>
+(function(){
+  if (!('serviceWorker' in navigator)) return;
+  var secure = location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  if (!secure) return;
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function(){ /* 등록 실패해도 사이트는 정상 동작 */ });
+  });
 })();
 </script>
 
